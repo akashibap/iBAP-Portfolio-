@@ -296,7 +296,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <button class="mobile-tab-btn" onclick="switchTab('contact-center');closeMobile()">📞 ICC</button>
   <button class="mobile-tab-btn" onclick="switchTab('iformx');closeMobile()">📝 iFormX</button>
   <button class="mobile-tab-btn" onclick="switchTab('account');closeMobile()">⚙️ Account Preference</button>
-  <button class="mobile-tab-btn" onclick="switchTab('smartmeter');closeMobile()">⚡ Smart Meter Read</button>
+  <button class="mobile-tab-btn" onclick="switchTab('smartmeter');closeMobile()">⚡ iMR</button>
   <button class="mobile-tab-btn" onclick="switchTab('contact');closeMobile()">📩 Get In Touch</button>
 </div>
 
@@ -307,7 +307,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <button class="tab-btn" data-tab="contact-center" onclick="switchTab('contact-center')">📞 ICC</button>
   <button class="tab-btn" data-tab="iformx" onclick="switchTab('iformx')">📝 iFormX</button>
   <button class="tab-btn" data-tab="account" onclick="switchTab('account')">⚙️ Account Preference</button>
-  <button class="tab-btn" data-tab="smartmeter" onclick="switchTab('smartmeter')">⚡ Smart Meter Read</button>
+  <button class="tab-btn" data-tab="smartmeter" onclick="switchTab('smartmeter')">⚡ iMR</button>
   <button class="tab-btn" data-tab="contact" onclick="switchTab('contact')">📩 Get In Touch</button>
 </div>
 
@@ -529,13 +529,15 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
         <div class="hero-badge" style="text-transform:none;letter-spacing:0.02em">iCC – Intelligent Contact Center</div>
         <h1 class="hero-title" style="font-size:clamp(26px,3.5vw,46px);line-height:1.1;white-space:nowrap">AI-POWERED DIGITAL PLATFORM FOR <span class="accent">CONTACT CENTER</span> EMPLOYEES</h1>
         <p class="hero-sub">iBAP is a unified, enterprise-grade, AI-powered and SAP-integrated solution purpose-built for water, gas, and power utilities. It enables utilities to modernize customer engagement, optimize field operations, and streamline contact center performance—while seamlessly leveraging their existing SAP investments.</p>
-        <div class="hero-tags">
+        <div class="hero-tags" style="flex-direction:column;align-items:flex-start;gap:8px">
           <div class="tag"><div class="tag-dot" style="background:var(--sky)"></div>360° Customer View</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--orange)"></div>Real-Time Service Management</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--green)"></div>Predictive Insights</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--cyan)"></div>Emergency Order Handling</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--gold)"></div>Seamless System Integration</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--red)"></div>IVR, Credit &amp; GIS Integration</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--orange)"></div>Real-Time Service Management</div>
+            <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--green)"></div>Predictive Insights</div>
+            <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--cyan)"></div>Emergency Order Handling</div>
+            <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--gold)"></div>Seamless System Integration</div>
+            <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--red)"></div>IVR, Credit &amp; GIS Integration</div>
+          </div>
         </div>
       </div>
     </div>
@@ -676,15 +678,17 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <div class="hero-panel">
     <div class="container">
       <div style="max-width:700px;padding:10px 0">
-        <div class="hero-badge">iFormX – Digital Form Automation</div>
+        <div class="hero-badge" style="text-transform:none;letter-spacing:0.02em">iFormX – Digital Form Automation</div>
         <h1 class="hero-title" style="font-size:clamp(26px,3.5vw,46px);line-height:1.1;white-space:nowrap">iFORM<span class="accent">X</span> LETTER <span class="accent-o">PROGRAM</span></h1>
         <p class="hero-sub">iForms is a web-based platform that enables businesses to create, manage, and automate client-facing communication—without writing a single line of code.</p>
-        <div class="hero-tags">
+        <div class="hero-tags" style="flex-direction:column;align-items:flex-start;gap:8px">
           <div class="tag"><div class="tag-dot" style="background:var(--sky)"></div>Smart &amp; Mobile Friendly Forms</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--orange)"></div>Paperless Data Capture</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--green)"></div>Mobile-Friendly Field Workflows</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--cyan)"></div>System Integration (ERP/CRM/GIS)</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--gold)"></div>Instant Data Sync &amp; Validation</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--orange)"></div>Paperless Data Capture</div>
+            <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--green)"></div>Mobile-Friendly Field Workflows</div>
+            <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--cyan)"></div>System Integration (ERP/CRM/GIS)</div>
+            <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--gold)"></div>Instant Data Sync &amp; Validation</div>
+          </div>
         </div>
       </div>
     </div>
@@ -694,7 +698,6 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <section class="section-pad">
     <div class="container">
       <div class="section-label">🏗️ Features of iFORMX</div>
-      <h2 class="section-title">BUILT FOR <span class="accent">EVERY</span> WORKFLOW</h2>
       <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
 
         <div class="feat-card" style="padding:20px">
@@ -737,7 +740,6 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <section class="section-pad" style="background:rgba(0,0,0,.18)">
     <div class="container">
       <div class="section-label">💪 Strengths of iFormX</div>
-      <h2 class="section-title"><span class="accent">STRENGTHS</span></h2>
       <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
 
         <div class="feat-card" style="padding:20px;text-align:center">
@@ -789,7 +791,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
     <div class="container">
       <div class="hero-grid">
         <div>
-          <div class="hero-badge">⚡ Smart Meter Reader · iBAP Official</div>
+          <div class="hero-badge" style="text-transform:none;letter-spacing:0.02em">⚡ iMR – Innovative Meter Read</div>
           <h1 class="hero-title" style="font-size:clamp(26px,3.5vw,46px);line-height:1.1;white-space:nowrap">AI-POWERED <span class="accent">METER</span> <span class="accent-o">READING.</span></h1>
           <p class="hero-sub">The complete field tool for utility meter readers, field inspectors &amp; billing teams. AI camera reads kWh values instantly, works offline, and integrates with ERP.</p>
           <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(30,144,255,.18),rgba(0,180,216,.12));border:1px solid rgba(30,144,255,.4);border-radius:10px;padding:9px 16px;margin-bottom:18px;">
@@ -842,7 +844,6 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <section class="section-pad">
     <div class="container">
       <div class="section-label">⚡ Core Features</div>
-      <h2 class="section-title">FIELD-READY <span class="accent">SMART TOOLS</span></h2>
       <div class="features-grid">
         <div class="feat-card" style="padding:14px"><div class="feat-icon ic-blue">🤖</div><div class="feat-title">AI Meter Reading</div><div class="feat-desc">Take a photo of any meter display. AI OCR engine instantly extracts the kWh value — shown on screen for confirmation before saving. No manual typing.</div></div>
         <div class="feat-card" style="padding:14px"><div class="feat-icon ic-orange">📍</div><div class="feat-title">GPS Navigation</div><div class="feat-desc">Built-in GPS navigation guides field agents turn-by-turn to each meter location. Integrated map view with route optimization.</div></div>
@@ -857,8 +858,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <!-- HOW IT WORKS -->
   <section class="section-pad" style="background:rgba(0,0,0,.2)">
     <div class="container">
-      <div class="section-label">🔄 Workflow</div>
-      <h2 class="section-title">HOW IT <span class="accent">WORKS</span></h2>
+      <div class="section-label">🔄 iMR Powered Work Flow</div>
       <div class="steps-grid">
         <div class="step" style="padding:14px"><div class="step-num">1</div><div class="step-title">Login &amp; Dashboard</div><div class="step-desc">Agent logs in. Dashboard shows assigned meter read list, pending counts, and SOS button.</div></div>
         <div class="step" style="padding:14px"><div class="step-num">2</div><div class="step-title">Select Meter Order</div><div class="step-desc">Open the MR list and tap on an assigned meter read order. View account details and meter location.</div></div>
@@ -873,8 +873,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <!-- PRICING -->
   <section class="section-pad">
     <div class="container">
-      <div class="section-label">💳 Plans</div>
-      <h2 class="section-title">CHOOSE YOUR <span class="accent">SUBSCRIPTION</span></h2>
+      <div class="section-label">💳 iMR Subscription Plans</div>
       <div class="pricing-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;">
         <div class="price-card" style="padding:14px 12px"><div style="font-size:20px;margin-bottom:6px">🌱</div><div class="plan-name" style="font-size:20px;margin-bottom:2px">Basic</div><div class="plan-price" style="font-size:28px;margin-bottom:4px">FREE<span>/mo</span></div><div class="plan-desc" style="font-size:12px;margin-bottom:10px">Perfect for individual meter readers starting out.</div><div class="plan-feats" style="gap:4px;margin-bottom:12px"><div class="pf" style="font-size:12px">50 Meter Reads / month</div><div class="pf" style="font-size:12px">Basic Reports</div><div class="pf" style="font-size:12px">1 Device supported</div><div class="pf" style="font-size:12px">Email Support</div><div class="pf" style="font-size:12px">Offline Sync</div></div><div class="plan-btn go" style="padding:9px;font-size:13px">Get Started Free</div></div>
         <div class="price-card popular" style="padding:14px 12px"><div class="pop-badge" style="font-size:9px">⭐ Most Popular</div><div style="font-size:20px;margin-bottom:6px">⚡</div><div class="plan-name" style="font-size:20px;margin-bottom:2px">Pro</div><div class="plan-price" style="font-size:28px;margin-bottom:4px">$9<span>.99/mo</span></div><div class="plan-desc" style="font-size:12px;margin-bottom:10px">For active field teams needing power features.</div><div class="plan-feats" style="gap:4px;margin-bottom:12px"><div class="pf" style="font-size:12px">Unlimited Reads</div><div class="pf" style="font-size:12px">Advanced Reports</div><div class="pf" style="font-size:12px">5 Devices</div><div class="pf" style="font-size:12px">Priority Support</div><div class="pf" style="font-size:12px">SOS Alerts enabled</div></div><div class="plan-btn pop" style="padding:9px;font-size:13px">Upgrade to Pro</div></div>
@@ -927,19 +926,19 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <div class="hero-panel">
     <div class="container">
       <div style="max-width:700px;padding:10px 0">
-        <div class="hero-badge">⚙️ Account Preference · iBAP Apps</div>
+        <div class="hero-badge" style="text-transform:none;letter-spacing:0.02em">⚙️ Account Preference</div>
         <h1 class="hero-title" style="font-size:clamp(26px,3.5vw,46px);line-height:1.1;white-space:nowrap">ACCOUNT <span class="accent">PREFERENCES</span></h1>
         <p class="hero-sub">Complete communication preference management — giving customers full control over how, when, and where they receive utility communications including SMS, Email, Push Notifications, and automated calls.</p>
         <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(0,200,83,.15),rgba(0,180,216,.10));border:1px solid rgba(0,200,83,.35);border-radius:10px;padding:9px 16px;margin-bottom:18px;">
             <span style="font-size:15px">⚙️</span>
             <span style="font-size:13px;font-weight:700;color:#c8f7d8;letter-spacing:.01em;">Data Consolidation, Scalable, and Regulatory Compliance</span>
           </div>
-        <div class="hero-tags">
-          <div class="tag"><div class="tag-dot" style="background:var(--sky)"></div>Allow Users to Select Preferred</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--orange)"></div>Frequency &amp; Timing Controls</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--green)"></div>Consent &amp; Compliance Management</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--cyan)"></div>Priority &amp; Escalation Rules</div>
-          <div class="tag"><div class="tag-dot" style="background:var(--gold)"></div>Personalization &amp; AI Enhancements</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--sky)"></div>Allow Users to Select Preferred</div>
+          <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--orange)"></div>Frequency &amp; Timing Controls</div>
+          <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--green)"></div>Consent &amp; Compliance Management</div>
+          <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--cyan)"></div>Priority &amp; Escalation Rules</div>
+          <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--gold)"></div>Personalization &amp; AI Enhancements</div>
         </div>
       </div>
     </div>
@@ -948,7 +947,6 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <!-- 11 FEATURE CARDS -->
   <section class="section-pad">
     <div class="container">
-      <div class="section-label">⚙️ Preference Management</div>
       <h2 class="section-title">ACCOUNT PREFERENCE <span class="accent">FEATURES</span></h2>
       <p class="section-sub">Complete communication preference management — giving customers full control over how, when, and where they receive utility communications.</p>
       <div class="features-grid">
