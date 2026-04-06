@@ -222,7 +222,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   .phone-showcase{justify-content:center;}
   .contact-grid{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr 1fr;}
-  .features-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+  .features-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important;}
   .detail-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
   .steps-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}
   .pricing-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
@@ -365,7 +365,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
       <div class="brand-spotlight">
         <div class="section-label" style="margin:0 auto 14px">Enterprise Solution</div>
         <h2 class="section-title">BUILT BY <span class="accent">iBAP</span> · POWERED BY <span class="accent-o">INNOVATION</span></h2>
-        <p style="font-size:14px;color:var(--gray);line-height:1.75;max-width:580px;margin:0 auto">iBAP is a unified, enterprise-grade, AI-powered and SAP-integrated solution purpose-built for water, gas, and power utilities. It enables utilities to modernize customer engagement, optimize field operations, and streamline contact center performance—while seamlessly leveraging their existing SAP investments.</p>
+        <p style="font-size:14px;color:var(--gray);line-height:1.75;max-width:580px;margin:0 auto">iBAP is a unified, enterprise-grade, AI-powered and ERP-integrated solution purpose-built for water, gas, and power utilities. It enables utilities to modernize customer engagement, optimize field operations, and streamline contact center performance—while seamlessly leveraging their existing ERP investments.</p>
         <div class="brand-pills">
           <div class="brand-chip">⚡ AI-Powered</div>
           <div class="brand-chip">🔧 ERP Integrated</div>
@@ -384,12 +384,12 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
       <div class="section-label">🚀 What We Build</div>
       <h2 class="section-title">ENTERPRISE <span class="accent">UTILITY</span> APPLICATION SUITE</h2>
       <p class="section-sub">Utilities today face rising customer expectations, operational complexity, and aging infrastructure. iBAP addresses these challenges with a single, intelligent platform that connects customers, field teams, contact centers, and backend systems in real time.</p>
-      <div class="features-grid">
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-blue">⚡</div><div class="feat-title">✅ Accelerate Operational Efficiency</div><div class="feat-desc">AI-driven Smart Meter Reading using mobile OCR, GPS routing, offline sync, and real-time alerts reduces manual effort, errors, and cycle times.<br><br>Unified enterprise applications manage meter reads, billing, tickets, notifications, and customer data in one SAP-connected ecosystem.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-orange">🏠</div><div class="feat-title">✅ Elevate Customer Experience</div><div class="feat-desc">A full-featured Customer Self-Service Portal empowers customers to view usage, pay bills, request services, receive alerts, and engage via live support—reducing call volumes and improving satisfaction.<br><br>Real-time notifications (SMS, email, push) keep customers informed with status updates, ETAs, and emergency broadcasts.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-green">🔧</div><div class="feat-title">✅ Transform the Contact Center</div><div class="feat-desc">360° Customer View with account data, alerts, premise details, financials, and interaction history available instantly.<br><br>Guided Customer Service Wizards speed up service initiation while enforcing business rules and compliance.<br><br>First Call Resolution (FCR) workflows resolve simple issues immediately, while complex cases are seamlessly routed to backend processing.<br><br>Integrated with GIS, Billing, and Field Service Management (FSM) systems for end-to-end resolution and SLA tracking.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-cyan">🤖</div><div class="feat-title">✅ Leverage AI &amp; Automation</div><div class="feat-desc">Auto Incident Reporting (IR) and Voice-to-Text Transcription reduce manual data entry and improve accuracy.<br><br>Event-driven intelligence and predictive analytics help utilities proactively manage issues before they escalate.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-gold">🔒</div><div class="feat-title">✅ Enterprise-Grade &amp; Secure</div><div class="feat-desc">Proven SAP two-way integration ensures data consistency across systems.<br><br>Role-based access, encryption, and enterprise security standards support mission-critical utility operations.</div></div>
+      <div class="features-grid" style="grid-template-columns:repeat(5,1fr);gap:14px">
+        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-blue">⚡</div><div class="feat-title">Accelerate Operational Efficiency</div><div class="feat-desc">AI-driven Smart Meter Reading with mobile OCR, GPS routing, offline sync, and real-time alerts reduces manual effort, errors, and cycle times.</div></div>
+        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-orange">🏠</div><div class="feat-title">Elevate Customer Experience</div><div class="feat-desc">A full-featured Self-Service Portal empowers customers to view usage, pay bills, request services, and receive real-time notifications.</div></div>
+        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-green">🔧</div><div class="feat-title">Transform the Contact Center</div><div class="feat-desc">360° Customer View with guided service wizards, First Call Resolution (FCR), and seamless GIS, Billing &amp; FSM integration.</div></div>
+        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-cyan">🤖</div><div class="feat-title">Leverage AI &amp; Automation</div><div class="feat-desc">Auto Incident Reporting and Voice-to-Text transcription reduce data entry. Predictive analytics help utilities resolve issues proactively.</div></div>
+        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-gold">🔒</div><div class="feat-title">Enterprise-Grade &amp; Secure</div><div class="feat-desc">Proven ERP two-way integration ensures data consistency. Role-based access and encryption support mission-critical operations.</div></div>
       </div>
     </div>
   </section>
@@ -399,11 +399,11 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
     <div class="container">
       <div class="section-label">🏭 Industries We Serve</div>
       <h2 class="section-title">DESIGNED FOR <span class="accent">MULTI‑UTILITY</span> ENVIRONMENTS</h2>
-      <p class="section-sub">iBAP helps utilities reduce operating costs, improve customer satisfaction, and maximize returns on SAP investments—without disrupting existing systems. It's not just an application suite; it's a future-ready digital foundation for utility operations.</p>
+      <p class="section-sub">iBAP helps utilities reduce operating costs, improve customer satisfaction, and maximize returns on ERP investments—without disrupting existing systems. It's not just an application suite; it's a future-ready digital foundation for utility operations.</p>
       <div class="features-grid" style="margin-top:22px">
-        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(30,144,255,.15);border:1px solid rgba(30,144,255,.3)">💧</div><div class="feat-title">Water Utilities</div><div class="feat-desc">Leak detection, consumption insights, billing, and service requests.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(247,127,0,.12);border:1px solid rgba(247,127,0,.3)">🔥</div><div class="feat-title">Gas Utilities</div><div class="feat-desc">Safety alerts, efficient distribution, and customer lifecycle management.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(255,214,0,.12);border:1px solid rgba(255,214,0,.3)"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffd600" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="feat-title">Electricity Utilities</div><div class="feat-desc">Smart meter reads, outage alerts, and AI-driven operational insights.</div></div>
+        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(30,144,255,.15);border:1px solid rgba(30,144,255,.3)">💧</div><div class="feat-title">Water</div><div class="feat-desc">Leak detection, consumption insights, billing, and service requests.</div></div>
+        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(247,127,0,.12);border:1px solid rgba(247,127,0,.3)">🔥</div><div class="feat-title">Gas</div><div class="feat-desc">Safety alerts, efficient distribution, and customer lifecycle management.</div></div>
+        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(255,214,0,.12);border:1px solid rgba(255,214,0,.3)"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffd600" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="feat-title">Electricity</div><div class="feat-desc">Smart meter reads, outage alerts, and AI-driven operational insights.</div></div>
       </div>
     </div>
   </section>
