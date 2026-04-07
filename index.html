@@ -38,7 +38,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,31,60,.95
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 .hero-panel{position:relative;overflow:hidden;background:linear-gradient(175deg,#0d1f3c 0%,#0f2d55 50%,#071525 100%);padding:20px 0 30px;}
 .hero-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 20%,rgba(30,144,255,.22),transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(247,127,0,.12),transparent 45%);}
-.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:56px;}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(30,144,255,.15);border:1px solid rgba(30,144,255,.4);border-radius:100px;padding:7px 18px;width:fit-content;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin-bottom:22px;}
 .hero-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(46px,7vw,82px);line-height:.88;margin-bottom:20px;}
 .hero-sub{font-size:clamp(13px,1.5vw,15px);color:var(--gray);line-height:1.8;margin-bottom:28px;}
@@ -320,10 +320,18 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
     <div class="container">
       <div class="hero-grid">
         <div class="hero-left">
-          <div class="hero-badge" style="text-transform:none">✨ Innovate, Integrate &amp; Impress</div>
-          <h1 class="hero-title" style="font-size:clamp(18px,2.8vw,38px);line-height:1.1;white-space:nowrap">AI Powered <span class="accent">Platform</span> For <span class="accent-o">Modern Utilities.</span></h1>
-          <p class="hero-sub">We empower organizations with advanced AI-driven customer service solutions that modernize every interaction. Our comprehensive approach spans mobile apps, customer portals, contact centers, IVR systems, and chatbots all seamlessly integrated with your existing billing systems to address key operational challenges. Backed by deep expertise in Utilities and Digital technologies, we help accelerate your digital transformation by replacing legacy processes with intelligent, scalable applications delivering a superior customer experience.</p>
-          <div class="hero-tags" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+          <!-- Row 1: Badge left, Title right on same row -->
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:18px;">
+            <div>
+              <div class="hero-badge" style="text-transform:none;margin-bottom:0">✨ Innovate, Integrate &amp; Impress</div>
+              <p style="font-size:clamp(13px,1.4vw,15px);color:var(--gray);line-height:1.75;max-width:380px;margin-top:14px;">We empower organizations with advanced AI-driven customer service solutions that modernize every interaction.</p>
+            </div>
+            <div style="flex:1;min-width:220px;">
+              <h1 class="hero-title" style="font-size:clamp(16px,2.2vw,32px);line-height:1.15;white-space:nowrap;margin-bottom:0">AI Powered <span class="accent">Platform</span> For <span class="accent-o">Modern Utilities.</span></h1>
+            </div>
+          </div>
+          <!-- Tags full width -->
+          <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;width:100%;margin-top:4px;">
             <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--orange)"></div>Modern, Simple, Fast</div>
             <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--green)"></div>Rapid Deployment and Cost Efficiency</div>
             <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--cyan)"></div>Effortless Integration</div>
@@ -351,21 +359,21 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <!-- STATS -->
   <div class="stats-bar">
     <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num">AI</div><div class="stat-lbl">Powered</div></div>
+      <div class="stat-item"><div class="stat-num">ERP</div><div class="stat-lbl">Integrated</div></div>
       <div class="stat-item"><div class="stat-num">3</div><div class="stat-lbl">Industries</div></div>
       <div class="stat-item"><div class="stat-num">5</div><div class="stat-lbl">Core Apps</div></div>
       <div class="stat-item"><div class="stat-num">6</div><div class="stat-lbl">Products</div></div>
-      <div class="stat-item"><div class="stat-num">ERP</div><div class="stat-lbl">Integrated</div></div>
-      <div class="stat-item"><div class="stat-num">AI</div><div class="stat-lbl">Powered</div></div>
     </div>
   </div>
 
   <!-- BRAND SPOTLIGHT -->
   <section class="section-pad" style="background:rgba(0,0,0,.2)">
     <div class="container">
-      <div class="brand-spotlight">
-        <div class="section-label" style="margin:0 auto 14px;text-transform:none">Enterprise Solution</div>
+        <div class="brand-spotlight">
+        <p style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);margin-bottom:12px">Enterprise Solutions</p>
         <h2 class="section-title">BUILT BY <span class="accent" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:inherit;letter-spacing:normal;text-transform:none">iBAP</span> · POWERED BY <span class="accent-o">INNOVATION</span></h2>
-        <p style="font-size:14px;color:var(--gray);line-height:1.75;max-width:580px;margin:0 auto">iBAP is a unified, enterprise-grade, AI-powered and ERP-integrated solution purpose-built for water, gas, and power utilities. It enables utilities to modernize customer engagement, optimize field operations, and streamline contact center performance—while seamlessly leveraging their existing ERP investments.</p>
+        <p style="font-size:14px;color:var(--gray);line-height:1.75;max-width:580px;margin:0 auto">iBAP is a unified, enterprise grade, AI-powered and ERP-integrated solution purpose built for water, gas, and power utilities. It enables utilities to modernize customer engagement, optimize field operations, and streamline contact center performance while seamlessly leveraging their existing ERP investments.</p>
         <div class="brand-pills">
           <div class="brand-chip">⚡ AI-Powered</div>
           <div class="brand-chip">🔧 ERP Integrated</div>
@@ -381,10 +389,10 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <!-- ENTERPRISE UTILITY APPLICATION SUITE -->
   <section class="section-pad">
     <div class="container">
-      <div class="section-label" style="text-transform:none">🚀 What We Build</div>
+      <div class="section-label" style="text-transform:none">🚀 Features</div>
       <h2 class="section-title">ENTERPRISE <span class="accent">UTILITY</span> APPLICATION SUITE</h2>
       <p class="section-sub" style="max-width:100%">Utilities today face rising customer expectations, operational complexity, and aging infrastructure. iBAP addresses these challenges with a single, intelligent platform that connects customers, field teams, contact centers, and backend systems in real time.</p>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:stretch;">
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:stretch;">
         <!-- Card 1: Accelerate Operational Efficiency -->
         <div class="feat-card" style="padding:18px;display:flex;flex-direction:column;">
           <div class="feat-icon ic-blue" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">⚡</div>
@@ -422,13 +430,13 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <!-- INDUSTRIES -->
   <section class="section-pad" style="background:rgba(0,0,0,.15)">
     <div class="container">
-      <div class="section-label" style="text-transform:none">🏭 Industries We Serve</div>
+      <div class="section-label" style="display:none">🏭 Industries We Serve</div>
       <h2 class="section-title">DESIGNED FOR <span class="accent">MULTI‑UTILITY</span> ENVIRONMENTS</h2>
       <p class="section-sub" style="max-width:100%">iBAP helps utilities reduce operating costs, improve customer satisfaction, and maximize returns on ERP investments—without disrupting existing systems. It's not just an application suite; it's a future-ready digital foundation for utility operations.</p>
       <div class="features-grid" style="margin-top:22px">
-        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(30,144,255,.15);border:1px solid rgba(30,144,255,.3)">💧</div><div class="feat-title">Water</div><div class="feat-desc">Leak detection, consumption insights, billing, and service requests.</div></div>
+        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(30,144,255,.15);border:1px solid rgba(30,144,255,.3)">💧</div><div class="feat-title">Water/Waste Water</div><div class="feat-desc">Leak detection, consumption insights, billing, and service requests.</div></div>
         <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(247,127,0,.12);border:1px solid rgba(247,127,0,.3)">🔥</div><div class="feat-title">Gas</div><div class="feat-desc">Safety alerts, efficient distribution, and customer lifecycle management.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(255,214,0,.12);border:1px solid rgba(255,214,0,.3)"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffd600" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="feat-title">Electricity</div><div class="feat-desc">Smart meter reads, outage alerts, and AI-driven operational insights.</div></div>
+        <div class="feat-card" style="padding:14px"><div class="feat-icon" style="background:rgba(128,0,255,.12);border:1px solid rgba(128,0,255,.3)"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9b59b6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="feat-title">Power (Electricity)</div><div class="feat-desc">Smart meter reads, outage alerts, and AI-driven operational insights.</div></div>
       </div>
     </div>
   </section>
