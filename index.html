@@ -364,7 +364,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
     <div class="container">
       <div class="brand-spotlight">
         <div class="section-label" style="margin:0 auto 14px;text-transform:none">Enterprise Solution</div>
-        <h2 class="section-title">BUILT BY <span class="accent">iBAP</span> · POWERED BY <span class="accent-o">INNOVATION</span></h2>
+        <h2 class="section-title">BUILT BY <span class="accent" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:inherit;letter-spacing:normal;text-transform:none">iBAP</span> · POWERED BY <span class="accent-o">INNOVATION</span></h2>
         <p style="font-size:14px;color:var(--gray);line-height:1.75;max-width:580px;margin:0 auto">iBAP is a unified, enterprise-grade, AI-powered and ERP-integrated solution purpose-built for water, gas, and power utilities. It enables utilities to modernize customer engagement, optimize field operations, and streamline contact center performance—while seamlessly leveraging their existing ERP investments.</p>
         <div class="brand-pills">
           <div class="brand-chip">⚡ AI-Powered</div>
@@ -384,12 +384,37 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
       <div class="section-label" style="text-transform:none">🚀 What We Build</div>
       <h2 class="section-title">ENTERPRISE <span class="accent">UTILITY</span> APPLICATION SUITE</h2>
       <p class="section-sub" style="max-width:100%">Utilities today face rising customer expectations, operational complexity, and aging infrastructure. iBAP addresses these challenges with a single, intelligent platform that connects customers, field teams, contact centers, and backend systems in real time.</p>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px">
-        <div class="feat-card" style="padding:14px"><div class="feat-title" style="margin-bottom:6px;font-size:14px">Accelerate Operational Efficiency</div><div class="feat-desc" style="font-size:11.5px;line-height:1.6">AI-driven Smart Meter Reading using mobile OCR, GPS routing, offline sync, and real-time alerts reduces manual effort, errors, and cycle times. Unified enterprise applications manage meter reads, billing, tickets, notifications, and customer data in one ERP-connected ecosystem.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-title" style="margin-bottom:6px;font-size:14px">Elevate Customer Experience</div><div class="feat-desc" style="font-size:11.5px;line-height:1.6">A full-featured Customer Self-Service Portal empowers customers to view usage, pay bills, request services, receive alerts, and engage via live support—reducing call volumes and improving satisfaction. Real-time notifications (SMS, email, push) keep customers informed with status updates, ETAs, and emergency broadcasts.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-title" style="margin-bottom:6px;font-size:14px">Transform the Contact Center</div><div class="feat-desc" style="font-size:11.5px;line-height:1.6">360° Customer View with account data, alerts, premise details, financials, and interaction history available instantly. Guided Customer Service Wizards speed up service initiation while enforcing business rules and compliance. First Call Resolution (FCR) workflows resolve simple issues immediately, while complex cases are seamlessly routed to backend processing. Integrated with GIS, Billing, and Field Service Management (FSM) systems for end-to-end resolution and SLA tracking.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-title" style="margin-bottom:6px;font-size:14px">Leverage AI &amp; Automation</div><div class="feat-desc" style="font-size:11.5px;line-height:1.6">Auto Incident Reporting (IR) and Voice-to-Text Transcription reduce manual data entry and improve accuracy. Event-driven intelligence and predictive analytics help utilities proactively manage issues before they escalate.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-title" style="margin-bottom:6px;font-size:14px">Enterprise-Grade &amp; Secure</div><div class="feat-desc" style="font-size:11.5px;line-height:1.6">Proven ERP two-way integration ensures data consistency across systems. Role-based access, encryption, and enterprise security standards support mission-critical utility operations.</div></div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:stretch;">
+        <!-- Card 1: Accelerate Operational Efficiency -->
+        <div class="feat-card" style="padding:18px;display:flex;flex-direction:column;">
+          <div class="feat-icon ic-blue" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">⚡</div>
+          <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">Accelerate Operational Efficiency</div>
+          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">AI-powered smart meter reading with OCR, GPS, and real-time alerts reduces manual work, errors, and delays.<br><br>Unified ERP-based system manages billing, tickets, and customer data efficiently.</div>
+        </div>
+        <!-- Card 2: Elevate Customer Experience -->
+        <div class="feat-card" style="padding:18px;display:flex;flex-direction:column;">
+          <div class="feat-icon ic-cyan" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">🌟</div>
+          <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">Elevate Customer Experience</div>
+          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">Self-service portal allows customers to view usage, pay bills, and raise requests easily.<br><br>Real-time alerts and live support improve satisfaction and reduce call volume.</div>
+        </div>
+        <!-- Card 3: Transform the Contact Center -->
+        <div class="feat-card" style="padding:18px;display:flex;flex-direction:column;">
+          <div class="feat-icon ic-orange" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">📞</div>
+          <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">Transform the Contact Center</div>
+          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">360° customer view and service wizards enable faster issue resolution.<br><br>Simple issues are resolved instantly, while complex cases are routed efficiently.</div>
+        </div>
+        <!-- Card 4: Leverage AI & Automation -->
+        <div class="feat-card" style="padding:18px;display:flex;flex-direction:column;">
+          <div class="feat-icon ic-green" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">🤖</div>
+          <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">Leverage AI &amp; Automation</div>
+          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">Automation like voice-to-text and auto incident reporting reduces manual effort.<br><br>Predictive analytics helps detect and resolve issues proactively.</div>
+        </div>
+        <!-- Card 5: Enterprise-Grade & Secure -->
+        <div class="feat-card" style="padding:18px;display:flex;flex-direction:column;">
+          <div class="feat-icon ic-gold" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">🔒</div>
+          <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">Enterprise-Grade &amp; Secure</div>
+          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">ERP integration ensures smooth data flow across systems.<br><br>Advanced security and role-based access protect critical operations.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -713,7 +738,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
     <div class="container">
       <div style="padding:10px 0">
         <div class="hero-badge" style="text-transform:none;letter-spacing:0.02em">iFormX – Digital Form Automation</div>
-        <h1 class="hero-title" style="font-size:clamp(26px,3.5vw,46px);line-height:1.1;white-space:nowrap">iFORM<span class="accent">X</span> Letter <span class="accent-o">Program</span></h1>
+        <h1 class="hero-title" style="font-size:clamp(26px,3.5vw,46px);line-height:1.1;white-space:nowrap"><span style="font-family:'Plus Jakarta Sans',sans-serif;text-transform:none;font-size:inherit">i</span>FORM<span class="accent">X</span> Letter <span class="accent-o">Program</span></h1>
         <p class="hero-sub">iForms is a web-based platform that enables businesses to create, manage, and automate client-facing communication—without writing a single line of code.</p>
         <div class="hero-tags" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
           <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--sky)"></div>Smart &amp; Mobile Friendly Forms</div>
@@ -875,7 +900,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
   <section class="section-pad">
     <div class="container">
-      <div class="section-label">⚡ Core Features</div>
+      <div class="section-label">⚡ Core features</div>
       <div class="features-grid">
         <div class="feat-card" style="padding:14px"><div class="feat-icon ic-blue">🤖</div><div class="feat-title">AI Meter Reading</div><div class="feat-desc">Take a photo of any meter display. AI OCR engine instantly extracts the kWh value — shown on screen for confirmation before saving. No manual typing.</div></div>
         <div class="feat-card" style="padding:14px"><div class="feat-icon ic-orange">📍</div><div class="feat-title">GPS Navigation</div><div class="feat-desc">Built-in GPS navigation guides field agents turn-by-turn to each meter location. Integrated map view with route optimization.</div></div>
@@ -890,7 +915,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <!-- HOW IT WORKS -->
   <section class="section-pad" style="background:rgba(0,0,0,.2)">
     <div class="container">
-      <div class="section-label">🔄 iMR Powered Work Flow</div>
+      <div class="section-label">🔄 iMR powered work flow</div>
       <div class="steps-grid">
         <div class="step" style="padding:14px"><div class="step-num">1</div><div class="step-title">Login &amp; Dashboard</div><div class="step-desc">Agent logs in. Dashboard shows assigned meter read list, pending counts, and SOS button.</div></div>
         <div class="step" style="padding:14px"><div class="step-num">2</div><div class="step-title">Select Meter Order</div><div class="step-desc">Open the MR list and tap on an assigned meter read order. View account details and meter location.</div></div>
@@ -905,7 +930,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <!-- PRICING -->
   <section class="section-pad">
     <div class="container">
-      <div class="section-label">💳 iMR Subscription Plans</div>
+      <div class="section-label">💳 iMR subscription plans</div>
       <div class="pricing-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;">
         <div class="price-card" style="padding:14px 12px"><div style="font-size:20px;margin-bottom:6px">🌱</div><div class="plan-name" style="font-size:20px;margin-bottom:2px">Basic</div><div class="plan-price" style="font-size:28px;margin-bottom:4px">FREE<span>/mo</span></div><div class="plan-desc" style="font-size:12px;margin-bottom:10px">Perfect for individual meter readers starting out.</div><div class="plan-feats" style="gap:4px;margin-bottom:12px"><div class="pf" style="font-size:12px">50 Meter Reads / month</div><div class="pf" style="font-size:12px">Basic Reports</div><div class="pf" style="font-size:12px">1 Device supported</div><div class="pf" style="font-size:12px">Email Support</div><div class="pf" style="font-size:12px">Offline Sync</div></div><div class="plan-btn go" style="padding:9px;font-size:13px">Get Started Free</div></div>
         <div class="price-card popular" style="padding:14px 12px"><div class="pop-badge" style="font-size:9px">⭐ Most Popular</div><div style="font-size:20px;margin-bottom:6px">⚡</div><div class="plan-name" style="font-size:20px;margin-bottom:2px">Pro</div><div class="plan-price" style="font-size:28px;margin-bottom:4px">$9<span>.99/mo</span></div><div class="plan-desc" style="font-size:12px;margin-bottom:10px">For active field teams needing power features.</div><div class="plan-feats" style="gap:4px;margin-bottom:12px"><div class="pf" style="font-size:12px">Unlimited Reads</div><div class="pf" style="font-size:12px">Advanced Reports</div><div class="pf" style="font-size:12px">5 Devices</div><div class="pf" style="font-size:12px">Priority Support</div><div class="pf" style="font-size:12px">SOS Alerts enabled</div></div><div class="plan-btn pop" style="padding:9px;font-size:13px">Upgrade to Pro</div></div>
@@ -957,15 +982,15 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 <div class="tab-content" id="tab-account">
   <div class="hero-panel">
     <div class="container">
-      <div style="max-width:700px;padding:10px 0">
-        <div class="hero-badge" style="text-transform:none;letter-spacing:0.02em">⚙️ Account Preference</div>
+      <div style="padding:10px 0">
+        <div class="hero-badge" style="text-transform:none;letter-spacing:0.02em">⚙️ Account Preferences</div>
         <h1 class="hero-title" style="font-size:clamp(26px,3.5vw,46px);line-height:1.1;white-space:nowrap">ACCOUNT <span class="accent">PREFERENCES</span></h1>
-        <p class="hero-sub">Complete communication preference management — giving customers full control over how, when, and where they receive utility communications including SMS, Email, Push Notifications, and automated calls.</p>
+        <p class="hero-sub" style="max-width:100%">Complete communication preference management — giving customers full control over how, when, and where they receive utility communications including SMS, Email, Push Notifications, and automated calls.</p>
         <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(0,200,83,.15),rgba(0,180,216,.10));border:1px solid rgba(0,200,83,.35);border-radius:10px;padding:9px 16px;margin-bottom:18px;">
             <span style="font-size:15px">⚙️</span>
             <span style="font-size:13px;font-weight:700;color:#c8f7d8;letter-spacing:.01em;">Data Consolidation, Scalable, and Regulatory Compliance</span>
           </div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;width:100%">
           <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--sky)"></div>Allow Users to Select Preferred</div>
           <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--orange)"></div>Frequency &amp; Timing Controls</div>
           <div class="tag" style="margin:0"><div class="tag-dot" style="background:var(--green)"></div>Consent &amp; Compliance Management</div>
@@ -979,8 +1004,8 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <!-- 11 FEATURE CARDS -->
   <section class="section-pad">
     <div class="container">
-      <h2 class="section-title">ACCOUNT PREFERENCE <span class="accent">FEATURES</span></h2>
-      <p class="section-sub">Complete communication preference management — giving customers full control over how, when, and where they receive utility communications.</p>
+      <h2 class="section-title"><span class="accent">FEATURES</span></h2>
+      <p class="section-sub" style="max-width:100%">Complete communication preference management — giving customers full control over how, when, and where they receive utility communications.</p>
       <div class="features-grid">
         <div class="feat-card" style="padding:14px"><div class="feat-icon ic-blue">📡</div><div class="feat-title">Communication Channels</div><div class="feat-desc">Customers choose preferred channels — email, SMS, push notifications, automated calls, messaging apps, or paper mail. Define primary and secondary channels to ensure reliable delivery of important messages.</div></div>
         <div class="feat-card" style="padding:14px"><div class="feat-icon ic-orange">📋</div><div class="feat-title">Communication Types</div><div class="feat-desc">Users control which communications they receive — billing notifications, payment confirmations, outage alerts, account activity updates, and promotional messages. Opt in or out of specific categories.</div></div>
