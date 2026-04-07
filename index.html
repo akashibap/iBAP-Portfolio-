@@ -853,14 +853,18 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <section class="section-pad">
     <div class="container">
       <div class="section-label" style="text-transform:none">⚡ Core Features</div>
-      <div class="features-grid">
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-blue">🤖</div><div class="feat-title">AI Meter Reading</div><div class="feat-desc">Take a photo of any meter display. AI OCR engine instantly extracts the kWh value — shown on screen for confirmation before saving. No manual typing.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-orange">📍</div><div class="feat-title">GPS Navigation</div><div class="feat-desc">Built-in GPS navigation guides field agents turn-by-turn to each meter location. Integrated map view with route optimization.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-cyan">📷</div><div class="feat-title">QR &amp; Barcode Scanning</div><div class="feat-desc">Scan meter QR codes or barcodes to instantly identify accounts. Faster meter lookup without manual account number entry.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-green">☁️</div><div class="feat-title">Offline Sync</div><div class="feat-desc">Works fully offline. Readings, photos and form data save locally. When connectivity returns, everything auto-syncs. Last sync time shown in dashboard.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-red">🚨</div><div class="feat-title">SOS Emergency Alerts</div><div class="feat-desc">One-tap SOS button on any screen. Emergency assigned Notification ID, tracked with due date. Team gets alerted immediately for rapid response.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-blue">🔔</div><div class="feat-title">Smart Notifications</div><div class="feat-desc">Real-time alerts for every important event — SOS, meter readings, ticket updates, sync status, login activity, and field exceptions. All categorized.</div></div>
+      <div class="icx-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;width:100%;">
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🤖</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">AI Meter Reading</div><div class="feat-desc" style="font-size:11px;">Capture meter images and instantly extract kWh using AI-powered OCR—no manual entry.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📍</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">GPS Navigation</div><div class="feat-desc" style="font-size:11px;">Turn-by-turn navigation with optimized routes to every meter location.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📷</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">QR &amp; Barcode Scanning</div><div class="feat-desc" style="font-size:11px;">Scan QR codes or barcodes to quickly identify meters and access account details.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">☁️</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Offline Sync</div><div class="feat-desc" style="font-size:11px;">Work seamlessly offline. Data is saved locally and auto-syncs when connectivity is restored.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🚨</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">SOS Emergency Alerts</div><div class="feat-desc" style="font-size:11px;">Trigger instant alerts with a one-tap SOS. Each alert is tracked for quick response.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔔</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Smart Notifications</div><div class="feat-desc" style="font-size:11px;">Stay updated with real-time alerts on readings, tickets, sync status, and activities.</div></div>
       </div>
+      <style>
+        @media(max-width:900px){.icx-cards-grid{grid-template-columns:repeat(2,1fr)!important;}}
+        @media(max-width:560px){.icx-cards-grid{grid-template-columns:1fr!important;}}
+      </style>
     </div>
   </section>
 
@@ -868,13 +872,13 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   <section class="section-pad" style="background:rgba(0,0,0,.2)">
     <div class="container">
       <div class="section-label" style="text-transform:none">🔄 iMR Powered Work Flow.</div>
-      <div class="steps-grid">
-        <div class="step" style="padding:14px"><div class="step-num">1</div><div class="step-title">Login &amp; Dashboard</div><div class="step-desc">Agent logs in. Dashboard shows assigned meter read list, pending counts, and SOS button.</div></div>
-        <div class="step" style="padding:14px"><div class="step-num">2</div><div class="step-title">Select Meter Order</div><div class="step-desc">Open the MR list and tap on an assigned meter read order. View account details and meter location.</div></div>
-        <div class="step" style="padding:14px"><div class="step-num">3</div><div class="step-title">Navigate to Meter</div><div class="step-desc">Use built-in GPS turn-by-turn navigation to reach the meter location. Or scan QR/barcode at the meter.</div></div>
-        <div class="step" style="padding:14px"><div class="step-num">4</div><div class="step-title">Capture Reading</div><div class="step-desc">Take a photo — AI reads the kWh value instantly. Add Front, Reading &amp; View photos (3 required).</div></div>
-        <div class="step" style="padding:14px"><div class="step-num">5</div><div class="step-title">Submit &amp; Sync</div><div class="step-desc">Hit Save Reading. Data syncs online instantly or queues offline and auto-uploads when connected.</div></div>
-        <div class="step" style="padding:14px"><div class="step-num">6</div><div class="step-title">Report &amp; Alert</div><div class="step-desc">Raise exception cases or SOS emergencies with one tap. Team gets notified and response begins.</div></div>
+      <div class="icx-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;width:100%;">
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">1️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Login &amp; Dashboard</div><div class="feat-desc" style="font-size:11px;">Agent logs in. Dashboard shows assigned meter read list, pending counts, and SOS button.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">2️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Select Meter Order</div><div class="feat-desc" style="font-size:11px;">Open the MR list and tap on an assigned meter read order. View account details and meter location.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">3️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Navigate to Meter</div><div class="feat-desc" style="font-size:11px;">Use built-in GPS turn-by-turn navigation to reach the meter location. Or scan QR/barcode at the meter.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">4️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Capture Reading</div><div class="feat-desc" style="font-size:11px;">Take a photo — AI reads the kWh value instantly. Add Front, Reading &amp; View photos (3 required).</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-gold" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">5️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Submit &amp; Sync</div><div class="feat-desc" style="font-size:11px;">Hit Save Reading. Data syncs online instantly or queues offline and auto-uploads when connected.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">6️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Report &amp; Alert</div><div class="feat-desc" style="font-size:11px;">Raise exception cases or SOS emergencies with one tap. Team gets notified and response begins.</div></div>
       </div>
     </div>
   </section>
@@ -957,19 +961,21 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
     <div class="container">
       <div class="section-label" style="text-transform:none">🚀 Features</div>
       <p class="section-sub" style="max-width:100%">Complete communication preference management — giving customers full control over how, when, and where they receive utility communications.</p>
-      <div class="features-grid">
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-blue">📡</div><div class="feat-title">Communication Channels</div><div class="feat-desc">Customers choose preferred channels — email, SMS, push notifications, automated calls, messaging apps, or paper mail. Define primary and secondary channels to ensure reliable delivery of important messages.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-orange">📋</div><div class="feat-title">Communication Types</div><div class="feat-desc">Users control which communications they receive — billing notifications, payment confirmations, outage alerts, account activity updates, and promotional messages. Opt in or out of specific categories.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-cyan">⏰</div><div class="feat-title">Frequency &amp; Timing Controls</div><div class="feat-desc">Set how often to receive communications — real-time, daily summaries, or monthly updates. Define preferred time windows and time zones to avoid messages at inconvenient times.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-green">🌐</div><div class="feat-title">Language &amp; Accessibility</div><div class="feat-desc">Select preferred language for all communications. Enable accessibility features such as large text or voice-based notifications, ensuring inclusivity for all customers.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-red">✅</div><div class="feat-title">Consent &amp; Compliance Management</div><div class="feat-desc">Captures and manages customer consent for different channels and types. Maintains consent timestamps and ensures GDPR and CCPA compliance.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-gold">📇</div><div class="feat-title">Contact Details Management</div><div class="feat-desc">Manage multiple contact details — email addresses and phone numbers — mapped to specific communication channels. Ensures each communication type reaches the right contact point.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-blue">🚦</div><div class="feat-title">Priority &amp; Escalation Rules</div><div class="feat-desc">Define priority rules for message delivery with fallback options if the primary channel fails. Critical alerts such as service outages can override standard preferences for timely communication.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-cyan">🔕</div><div class="feat-title">Do Not Disturb (DND)</div><div class="feat-desc">Set quiet hours during which non-critical communications are paused. Configure exceptions to allow urgent or emergency notifications during DND periods.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-orange">📱</div><div class="feat-title">Device &amp; App Preferences</div><div class="feat-desc">Manage which devices receive push notifications — enable or disable for specific mobile phones or tablets. Tailors the notification experience across multiple platforms.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-green">🤖</div><div class="feat-title">Personalization &amp; AI Enhancements</div><div class="feat-desc">AI recommends the best communication channels and timing based on user behavior. Provides proactive alerts such as predicting high bills or unusual usage patterns.</div></div>
-        <div class="feat-card" style="padding:14px"><div class="feat-icon ic-gold">📜</div><div class="feat-title">Audit &amp; History</div><div class="feat-desc">Complete history of all communications sent, along with records of preference and consent changes. Ensures transparency and helps track delivery status and past interactions.</div></div>
+      <div class="icx-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;width:100%;">
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📋</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Communication Types</div><div class="feat-desc" style="font-size:11px;">Users control which communications they receive — billing notifications, payment confirmations, outage alerts, account activity updates, and promotional messages.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">⏰</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Frequency &amp; Timing Controls</div><div class="feat-desc" style="font-size:11px;">Set how often to receive communications — real-time, daily summaries, or monthly updates. Define preferred time windows and time zones.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🌐</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Language &amp; Accessibility</div><div class="feat-desc" style="font-size:11px;">Select preferred language for all communications. Enable accessibility features such as large text or voice-based notifications for all customers.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">✅</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Consent &amp; Compliance Management</div><div class="feat-desc" style="font-size:11px;">Captures and manages customer consent for different channels and types. Maintains consent timestamps and ensures GDPR and CCPA compliance.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🚦</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Priority &amp; Escalation Rules</div><div class="feat-desc" style="font-size:11px;">Define priority rules for message delivery with fallback options. Critical alerts such as service outages can override standard preferences.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔕</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Do Not Disturb (DND)</div><div class="feat-desc" style="font-size:11px;">Set quiet hours during which non-critical communications are paused. Configure exceptions to allow urgent or emergency notifications during DND periods.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📱</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Device &amp; App Preferences</div><div class="feat-desc" style="font-size:11px;">Manage which devices receive push notifications — enable or disable for specific mobile phones or tablets across multiple platforms.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🤖</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Personalization &amp; AI Enhancements</div><div class="feat-desc" style="font-size:11px;">AI recommends the best communication channels and timing based on user behavior. Provides proactive alerts such as predicting high bills.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-gold" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📜</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Audit &amp; History</div><div class="feat-desc" style="font-size:11px;">Complete history of all communications sent, along with records of preference and consent changes. Ensures transparency and delivery tracking.</div></div>
       </div>
+      <style>
+        @media(max-width:900px){.icx-cards-grid{grid-template-columns:repeat(2,1fr)!important;}}
+        @media(max-width:560px){.icx-cards-grid{grid-template-columns:1fr!important;}}
+      </style>
     </div>
   </section>
 
@@ -1075,13 +1081,13 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   </div>
   <div class="footer-strip">
     <a href="https://www.ibap.ai" target="_blank" rel="noopener">www.ibap.ai</a>
-    <a href="/cdn-cgi/l/email-protection#98f1f6fef7d8f1faf9e8b6f9f1"><span class="__cf_email__" data-cfemail="21484f474e61484340510f4048">[email&#160;protected]</span></a>
+    <a href="mailto:info@ibap.ai">info@ibap.ai</a>
     <a href="tel:+14129094665">+1 (412)909-4665</a>
   </div>
 </footer>
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function switchTab(id){
   document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active');});
   document.querySelectorAll('.tab-btn').forEach(function(t){t.classList.remove('active');});
