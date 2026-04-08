@@ -5,8 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>html,body{background:#0d1f3c!important;}</style>
 <title>iBAP – Utility Application Suite</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
   --navy:#0d1f3c;--blue:#1565c0;--sky:#1e90ff;--cyan:#00b4d8;
@@ -15,7 +19,7 @@
   --card:rgba(255,255,255,0.06);--border:rgba(255,255,255,0.12);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:auto;}
 body{font-family:"Plus Jakarta Sans",sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;}
 .container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px;}
 .section-label{display:inline-flex;align-items:center;gap:8px;background:rgba(30,144,255,.15);border:1px solid rgba(30,144,255,.35);border-radius:100px;padding:6px 18px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);margin-bottom:10px;}
@@ -34,7 +38,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,31,60,.95
 .tab-btn{flex-shrink:0;padding:15px 22px;font-size:13px;font-weight:700;color:rgba(255,255,255,.5);cursor:pointer;border:none;background:transparent;border-bottom:3px solid transparent;transition:.25s;white-space:nowrap;font-family:"Plus Jakarta Sans",sans-serif;position:relative;}
 .tab-btn:hover{color:#fff;}
 .tab-btn.active{color:var(--sky);border-bottom-color:var(--sky);}
-.tab-content{display:none;padding-top:116px;min-height:100vh;animation:fadeIn .35s ease;}
+.tab-content{display:none;padding-top:116px;min-height:100vh;}
 .tab-content.active{display:block;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 .hero-panel{position:relative;overflow:hidden;background:linear-gradient(175deg,#0d1f3c 0%,#0f2d55 50%,#071525 100%);padding:20px 0 30px;}
@@ -114,9 +118,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,31,60,.95
 .dc-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .dc-icon{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .dc-title{font-size:15px;font-weight:800;}
-.dc-sub{font-size:11px;color:var(--gray);margin-top:2px;}
+.dc-sub{font-size:12px;color:rgba(220,235,255,0.88);margin-top:2px;}
 .dc-list{display:flex;flex-direction:column;gap:7px;}
-.dc-item{font-size:13px;color:rgba(255,255,255,.75);padding-left:14px;position:relative;line-height:1.55;}
+.dc-item{font-size:12px;color:rgba(200,220,248,0.82);padding-left:14px;position:relative;line-height:1.6;}
 .dc-item::before{content:"›";position:absolute;left:0;color:var(--sky);font-weight:700;}
 /* STEPS */
 .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:22px;}
@@ -275,6 +279,33 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   .section-title{font-size:20px!important;}
   .steps-grid{grid-template-columns:1fr;}
 }
+
+/* ── Card text refinements ── */
+.feat-desc{
+  font-family:"Plus Jakarta Sans",sans-serif;
+  letter-spacing:0.01em;
+  color:rgba(220,235,255,0.88);
+}
+.dc-sub{
+  font-family:"Plus Jakarta Sans",sans-serif;
+  letter-spacing:0.01em;
+  color:rgba(220,235,255,0.88) !important;
+}
+.dc-item{
+  font-family:"Plus Jakarta Sans",sans-serif;
+  font-size:12px;
+  font-weight:400;
+  letter-spacing:0.01em;
+  color:rgba(200,220,248,0.82);
+  line-height:1.6;
+}
+.dc-title{
+  font-family:"Plus Jakarta Sans",sans-serif;
+  font-size:14px;
+  font-weight:700;
+  color:rgba(230,242,255,0.95);
+  letter-spacing:0.01em;
+}
 </style>
 </head>
 <body>
@@ -397,31 +428,31 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
         <div class="feat-card" style="display:flex;flex-direction:column;">
           <div class="feat-icon ic-blue" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">⚡</div>
           <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">Accelerate Efficiency</div>
-          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">AI-powered meter reading with OCR, GPS, and real-time alerts reduces manual work and errors. ERP streamlines billing, tickets, and customer data.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;line-height:1.65;flex:1;color:rgba(220,235,255,0.88);">AI-powered meter reading with OCR, GPS, and real-time alerts reduces manual work and errors. ERP streamlines billing, tickets, and customer data.</div>
         </div>
         <!-- Card 2: Elevate Customer Experience -->
         <div class="feat-card" style="display:flex;flex-direction:column;">
           <div class="feat-icon ic-cyan" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">🌟</div>
           <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">Enhance Customer Experience</div>
-          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">Self-service portal for usage, payments, and requests. Real-time alerts and support improve satisfaction.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;line-height:1.65;flex:1;color:rgba(220,235,255,0.88);">Self-service portal for usage, payments, and requests. Real-time alerts and support improve satisfaction.</div>
         </div>
         <!-- Card 3: Transform the Contact Center -->
         <div class="feat-card" style="display:flex;flex-direction:column;">
           <div class="feat-icon ic-orange" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">📞</div>
           <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">Transform Contact Center</div>
-          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">360° customer view enables faster issue resolution. Smart routing handles cases efficiently.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;line-height:1.65;flex:1;color:rgba(220,235,255,0.88);">360° customer view enables faster issue resolution. Smart routing handles cases efficiently.</div>
         </div>
         <!-- Card 4: Leverage AI & Automation -->
         <div class="feat-card" style="display:flex;flex-direction:column;">
           <div class="feat-icon ic-green" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">🤖</div>
           <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">AI &amp; Automation</div>
-          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">Voice-to-text and auto reporting reduce manual effort. Predictive analytics enables proactive resolution.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;line-height:1.65;flex:1;color:rgba(220,235,255,0.88);">Voice-to-text and auto reporting reduce manual effort. Predictive analytics enables proactive resolution.</div>
         </div>
         <!-- Card 5: Enterprise-Grade & Secure -->
         <div class="feat-card" style="display:flex;flex-direction:column;">
           <div class="feat-icon ic-gold" style="width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:20px;">🔒</div>
           <div class="feat-title" style="margin-bottom:8px;font-size:14px;line-height:1.3;">Secure &amp; Enterprise-Ready</div>
-          <div class="feat-desc" style="font-size:12px;line-height:1.65;flex:1;">Seamless ERP integration ensures smooth operations. Role-based access and advanced security protect data.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;line-height:1.65;flex:1;color:rgba(220,235,255,0.88);">Seamless ERP integration ensures smooth operations. Role-based access and advanced security protect data.</div>
         </div>
       </div>
       <style>
@@ -440,9 +471,9 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
       <h2 class="section-title">DESIGNED FOR <span class="accent">MULTI‑UTILITY</span> ENVIRONMENTS</h2>
       <p class="section-sub" style="max-width:100%">iBAP helps utilities reduce operating costs, improve customer satisfaction, and maximize returns on ERP investments—without disrupting existing systems. It's not just an application suite; it's a future-ready digital foundation for utility operations.</p>
       <div class="features-grid" style="margin-top:22px">
-        <div class="feat-card"><div class="feat-icon" style="background:rgba(30,144,255,.15);border:1px solid rgba(30,144,255,.3)">💧</div><div class="feat-title">Water/Waste Water</div><div class="feat-desc">Leak detection, consumption insights, billing, and service requests.</div></div>
-        <div class="feat-card"><div class="feat-icon" style="background:rgba(247,127,0,.12);border:1px solid rgba(247,127,0,.3)">🔥</div><div class="feat-title">Gas</div><div class="feat-desc">Safety alerts, efficient distribution, and customer lifecycle management.</div></div>
-        <div class="feat-card"><div class="feat-icon" style="background:rgba(128,0,255,.12);border:1px solid rgba(128,0,255,.3)"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9b59b6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="feat-title">Power</div><div class="feat-desc">Smart meter reads, outage alerts, and AI-driven operational insights.</div></div>
+        <div class="feat-card"><div class="feat-icon" style="background:rgba(30,144,255,.15);border:1px solid rgba(30,144,255,.3)">💧</div><div class="feat-title">Water/Waste Water</div><div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Leak detection, consumption insights, billing, and service requests.</div></div>
+        <div class="feat-card"><div class="feat-icon" style="background:rgba(247,127,0,.12);border:1px solid rgba(247,127,0,.3)">🔥</div><div class="feat-title">Gas</div><div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Safety alerts, efficient distribution, and customer lifecycle management.</div></div>
+        <div class="feat-card"><div class="feat-icon" style="background:rgba(128,0,255,.12);border:1px solid rgba(128,0,255,.3)"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9b59b6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="feat-title">Power</div><div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Smart meter reads, outage alerts, and AI-driven operational insights.</div></div>
       </div>
     </div>
   </section>
@@ -539,15 +570,15 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
       <h2 class="section-title">COMPLETE UTILITY <span class="accent">MANAGEMENT</span></h2>
       <p class="section-sub" style="max-width:100%;white-space:normal;overflow:visible;">Everything a utility customer needs — bill payments, usage tracking, service management, and 24/7 support.</p>
       <div class="icx-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;width:100%;">
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-gold" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">⚙️</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Account Management</div><div class="feat-desc" style="font-size:11px;">Easily update details, track history, and view services through self-service.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">💳</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Billing &amp; Payments</div><div class="feat-desc" style="font-size:11px;">Check bills, make payments, and set up auto-pay for convenience.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔄</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Auto Pay</div><div class="feat-desc" style="font-size:11px;">Set up automatic payments and never miss a due date.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📊</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Usage Analytics</div><div class="feat-desc" style="font-size:11px;">Track and compare your utility usage with simple and clear insights.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔧</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Service Requests</div><div class="feat-desc" style="font-size:11px;">Start, stop, or transfer services quickly with guided steps.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🚨</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Emergency Leakage Report</div><div class="feat-desc" style="font-size:11px;">Report leaks instantly and get guided emergency support when needed.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📝</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Submit Meter Reading</div><div class="feat-desc" style="font-size:11px;">Submit your meter readings anytime and avoid field visits.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔴</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Outage Management</div><div class="feat-desc" style="font-size:11px;">Get instant updates on service disruptions and outage maps, with estimated restoration times.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🎫</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Support & Resources</div><div class="feat-desc" style="font-size:11px;">Access FAQs, guides, and support requests for quick help.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-gold" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">⚙️</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Account Management</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Easily update details, track history, and view services through self-service.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">💳</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Billing &amp; Payments</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Check bills, make payments, and set up auto-pay for convenience.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔄</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Auto Pay</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Set up automatic payments and never miss a due date.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📊</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Usage Analytics</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Track and compare your utility usage with simple and clear insights.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔧</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Service Requests</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Start, stop, or transfer services quickly with guided steps.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🚨</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Emergency Leakage Report</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Report leaks instantly and get guided emergency support when needed.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📝</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Submit Meter Reading</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Submit your meter readings anytime and avoid field visits.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔴</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Outage Management</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Get instant updates on service disruptions and outage maps, with estimated restoration times.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🎫</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Support & Resources</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Access FAQs, guides, and support requests for quick help.</div></div>
       </div>
       <style>
         @media(max-width:900px){.icx-cards-grid{grid-template-columns:repeat(2,1fr)!important;}}
@@ -592,7 +623,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
         <!-- 1. Home Screen -->
         <div class="detail-card" style="padding:12px">
-          <div class="dc-header"><div class="dc-icon ic-cyan" style="font-size:20px">🏠</div><div><div class="dc-title">Home Screen</div><div class="dc-sub">360° Customer View</div></div></div>
+          <div class="dc-header"><div class="dc-icon ic-cyan" style="font-size:20px">🏠</div><div><div class="dc-title">Home Screen</div><div class="dc-sub" style="font-size:12px;font-weight:400;color:rgba(220,235,255,0.88);">360° Customer View</div></div></div>
           <div class="dc-list">
             <div class="dc-item">Simplified 360 view with account info &amp; alerts</div>
             <div class="dc-item">Premise, Notes, and Alerts</div>
@@ -603,7 +634,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
         <!-- 2. Search Screen -->
         <div class="detail-card" style="padding:12px">
-          <div class="dc-header"><div class="dc-icon ic-blue" style="font-size:20px">🔍</div><div><div class="dc-title">Search Screen</div><div class="dc-sub">Find Customers Fast</div></div></div>
+          <div class="dc-header"><div class="dc-icon ic-blue" style="font-size:20px">🔍</div><div><div class="dc-title">Search Screen</div><div class="dc-sub" style="font-size:12px;font-weight:400;color:rgba(220,235,255,0.88);">Find Customers Fast</div></div></div>
           <div class="dc-list">
             <div class="dc-item">Simple and Enterprise Search</div>
             <div class="dc-item">Seamless IVR and Chatbot Integration</div>
@@ -613,7 +644,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
         <!-- 3. Accounts & Billing -->
         <div class="detail-card" style="padding:12px">
-          <div class="dc-header"><div class="dc-icon ic-gold" style="font-size:20px">💳</div><div><div class="dc-title">Accounts &amp; Billing</div><div class="dc-sub">Financial Management</div></div></div>
+          <div class="dc-header"><div class="dc-icon ic-gold" style="font-size:20px">💳</div><div><div class="dc-title">Accounts &amp; Billing</div><div class="dc-sub" style="font-size:12px;font-weight:400;color:rgba(220,235,255,0.88);">Financial Management</div></div></div>
           <div class="dc-list">
             <div class="dc-item">Bill Inquiries &amp; Explanation</div>
             <div class="dc-item">Payment History &amp; Issue Resolution</div>
@@ -624,7 +655,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
         <!-- 4. Alerts & Notifications -->
         <div class="detail-card" style="padding:12px">
-          <div class="dc-header"><div class="dc-icon ic-orange" style="font-size:20px">🔔</div><div><div class="dc-title">Alerts &amp; Notifications</div><div class="dc-sub">Stay Informed</div></div></div>
+          <div class="dc-header"><div class="dc-icon ic-orange" style="font-size:20px">🔔</div><div><div class="dc-title">Alerts &amp; Notifications</div><div class="dc-sub" style="font-size:12px;font-weight:400;color:rgba(220,235,255,0.88);">Stay Informed</div></div></div>
           <div class="dc-list">
             <div class="dc-item">Configurable Alerts &amp; Actionable Notifications</div>
             <div class="dc-item">Simplified Workflow</div>
@@ -634,7 +665,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
         <!-- 5. Customer Service -->
         <div class="detail-card" style="padding:12px">
-          <div class="dc-header"><div class="dc-icon ic-green" style="font-size:20px">🤝</div><div><div class="dc-title">Customer Service</div><div class="dc-sub">Step-by-Step Wizard</div></div></div>
+          <div class="dc-header"><div class="dc-icon ic-green" style="font-size:20px">🤝</div><div><div class="dc-title">Customer Service</div><div class="dc-sub" style="font-size:12px;font-weight:400;color:rgba(220,235,255,0.88);">Step-by-Step Wizard</div></div></div>
           <div class="dc-list">
             <div class="dc-item">Premise Insights, Service Theft &amp; Abandon Premise</div>
             <div class="dc-item">Address Validation &amp; Credit Check</div>
@@ -645,7 +676,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
         <!-- 6. Resolution Workflow -->
         <div class="detail-card" style="padding:12px">
-          <div class="dc-header"><div class="dc-icon ic-red" style="font-size:20px">⚙️</div><div><div class="dc-title">Resolution Workflow</div><div class="dc-sub">FCR &amp; Escalation</div></div></div>
+          <div class="dc-header"><div class="dc-icon ic-red" style="font-size:20px">⚙️</div><div><div class="dc-title">Resolution Workflow</div><div class="dc-sub" style="font-size:12px;font-weight:400;color:rgba(220,235,255,0.88);">FCR &amp; Escalation</div></div></div>
           <div class="dc-list">
             <div class="dc-item">First Call Resolution (FCR) for simple issues</div>
             <div class="dc-item">Backend processing for complex cases</div>
@@ -656,7 +687,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
         <!-- 7. Real-Time Communication -->
         <div class="detail-card" style="padding:12px">
-          <div class="dc-header"><div class="dc-icon ic-cyan" style="font-size:20px">📡</div><div><div class="dc-title">Real-Time Communication</div><div class="dc-sub">Live Alerts &amp; Updates</div></div></div>
+          <div class="dc-header"><div class="dc-icon ic-cyan" style="font-size:20px">📡</div><div><div class="dc-title">Real-Time Communication</div><div class="dc-sub" style="font-size:12px;font-weight:400;color:rgba(220,235,255,0.88);">Live Alerts &amp; Updates</div></div></div>
           <div class="dc-list">
             <div class="dc-item">Instant notifications via SMS, push, or email</div>
             <div class="dc-item">Live status updates and ETA sharing</div>
@@ -666,7 +697,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
         <!-- 8. Auto IR & Voice to Text -->
         <div class="detail-card" style="padding:12px">
-          <div class="dc-header"><div class="dc-icon ic-blue" style="font-size:20px">🎙️</div><div><div class="dc-title">Auto IR &amp; Voice to Text</div><div class="dc-sub">AI-Driven Automation</div></div></div>
+          <div class="dc-header"><div class="dc-icon ic-blue" style="font-size:20px">🎙️</div><div><div class="dc-title">Auto IR &amp; Voice to Text</div><div class="dc-sub" style="font-size:12px;font-weight:400;color:rgba(220,235,255,0.88);">AI-Driven Automation</div></div></div>
           <div class="dc-list">
             <div class="dc-item">Event-driven IR and Review</div>
             <div class="dc-item">Auto IR Creation &amp; Voice to Text Transcription</div>
@@ -720,7 +751,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e90ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="feat-title" style="margin-bottom:7px">No-Code Form Builder</div>
-          <div class="feat-desc">Easily design custom forms with intuitive layouts, flexible field types, and drag-and-drop simplicity. Integrate all communication channels for better communication.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Easily design custom forms with intuitive layouts, flexible field types, and drag-and-drop simplicity. Integrate all communication channels for better communication.</div>
         </div>
 
         <div class="feat-card" style="padding:12px">
@@ -728,7 +759,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f77f00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><line x1="14" y1="17" x2="20" y2="17"/><line x1="17" y1="14" x2="17" y2="20"/></svg>
           </div>
           <div class="feat-title" style="margin-bottom:7px">Template Automation</div>
-          <div class="feat-desc">Standardize recurring communications such as payment letters, service updates, and customer notices, field service forms with ready-to-use templates.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Standardize recurring communications such as payment letters, service updates, and customer notices, field service forms with ready-to-use templates.</div>
         </div>
 
         <div class="feat-card" style="padding:12px">
@@ -736,7 +767,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00c853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
           </div>
           <div class="feat-title" style="margin-bottom:7px">Workflow Integration</div>
-          <div class="feat-desc">Seamlessly connect with backend systems like ERP system for secure, real-time data synchronization.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Seamlessly connect with backend systems like ERP system for secure, real-time data synchronization.</div>
         </div>
 
         <div class="feat-card" style="padding:12px">
@@ -744,7 +775,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <div class="feat-title" style="margin-bottom:7px">Approval &amp; Branding</div>
-          <div class="feat-desc">Maintain consistency and compliance with built-in approval workflows and customizable brand elements.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Maintain consistency and compliance with built-in approval workflows and customizable brand elements.</div>
         </div>
 
       </div>
@@ -762,7 +793,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e90ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="feat-title" style="margin-bottom:7px">Low-Code Flexibility</div>
-          <div class="feat-desc">Enables non-technical staff to build forms and templates. Fast deployment with zero coding.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Enables non-technical staff to build forms and templates. Fast deployment with zero coding.</div>
         </div>
 
         <div class="feat-card" style="padding:12px;text-align:center">
@@ -770,7 +801,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f77f00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="6" height="18"/><rect x="9" y="8" width="6" height="13"/><rect x="16" y="13" width="6" height="8"/></svg>
           </div>
           <div class="feat-title" style="margin-bottom:7px">Scalability</div>
-          <div class="feat-desc">Suitable for small teams as well as enterprise-wide deployment.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Suitable for small teams as well as enterprise-wide deployment.</div>
         </div>
 
         <div class="feat-card" style="padding:12px;text-align:center">
@@ -778,7 +809,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e53935" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </div>
           <div class="feat-title" style="margin-bottom:7px">Consistency</div>
-          <div class="feat-desc">Reduces manual effort and standardizes customer and employee-facing communications.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Reduces manual effort and standardizes customer and employee-facing communications.</div>
         </div>
 
         <div class="feat-card" style="padding:12px;text-align:center">
@@ -786,7 +817,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00b4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="5"/><rect x="14" y="3" width="7" height="11"/><rect x="3" y="12" width="7" height="9"/><rect x="14" y="18" width="7" height="3"/></svg>
           </div>
           <div class="feat-title" style="margin-bottom:7px">User-Friendly UI</div>
-          <div class="feat-desc">Intuitive drag-and-drop functionality reduces training needs. Enhances client experience through personalized communication.</div>
+          <div class="feat-desc" style="font-size:14px;font-weight:400;color:rgba(220,235,255,0.88);">Intuitive drag-and-drop functionality reduces training needs. Enhances client experience through personalized communication.</div>
         </div>
 
       </div>
@@ -860,12 +891,12 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
     <div class="container">
       <div class="section-label" style="text-transform:none">⚡ Core Features</div>
       <div class="icx-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;width:100%;">
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🤖</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">AI Meter Reading</div><div class="feat-desc" style="font-size:11px;">Capture meter images and instantly extract kWh using AI-powered OCR—no manual entry.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📍</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">GPS Navigation</div><div class="feat-desc" style="font-size:11px;">Turn-by-turn navigation with optimized routes to every meter location.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📷</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">QR &amp; Barcode Scanning</div><div class="feat-desc" style="font-size:11px;">Scan QR codes or barcodes to quickly identify meters and access account details.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">☁️</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Offline Sync</div><div class="feat-desc" style="font-size:11px;">Work seamlessly offline. Data is saved locally and auto-syncs when connectivity is restored.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🚨</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">SOS Emergency Alerts</div><div class="feat-desc" style="font-size:11px;">Trigger instant alerts with a one-tap SOS. Each alert is tracked for quick response.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔔</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Smart Notifications</div><div class="feat-desc" style="font-size:11px;">Stay updated with real-time alerts on readings, tickets, sync status, and activities.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🤖</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">AI Meter Reading</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Capture meter images and instantly extract kWh using AI-powered OCR—no manual entry.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📍</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">GPS Navigation</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Turn-by-turn navigation with optimized routes to every meter location.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📷</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">QR &amp; Barcode Scanning</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Scan QR codes or barcodes to quickly identify meters and access account details.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">☁️</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Offline Sync</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Work seamlessly offline. Data is saved locally and auto-syncs when connectivity is restored.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🚨</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">SOS Emergency Alerts</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Trigger instant alerts with a one-tap SOS. Each alert is tracked for quick response.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔔</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Smart Notifications</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Stay updated with real-time alerts on readings, tickets, sync status, and activities.</div></div>
       </div>
       <style>
         @media(max-width:900px){.icx-cards-grid{grid-template-columns:repeat(2,1fr)!important;}}
@@ -879,12 +910,12 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
     <div class="container">
       <div class="section-label" style="text-transform:none">🔄 iMR Powered Work Flow.</div>
       <div class="icx-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;width:100%;">
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">1️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Login &amp; Dashboard</div><div class="feat-desc" style="font-size:11px;">Agent logs in. Dashboard shows assigned meter read list, pending counts, and SOS button.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">2️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Select Meter Order</div><div class="feat-desc" style="font-size:11px;">Open the MR list and tap on an assigned meter read order. View account details and meter location.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">3️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Navigate to Meter</div><div class="feat-desc" style="font-size:11px;">Use built-in GPS turn-by-turn navigation to reach the meter location. Or scan QR/barcode at the meter.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">4️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Capture Reading</div><div class="feat-desc" style="font-size:11px;">Take a photo — AI reads the kWh value instantly. Add Front, Reading &amp; View photos (3 required).</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-gold" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">5️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Submit &amp; Sync</div><div class="feat-desc" style="font-size:11px;">Hit Save Reading. Data syncs online instantly or queues offline and auto-uploads when connected.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">6️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Report &amp; Alert</div><div class="feat-desc" style="font-size:11px;">Raise exception cases or SOS emergencies with one tap. Team gets notified and response begins.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">1️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Login &amp; Dashboard</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Agent logs in. Dashboard shows assigned meter read list, pending counts, and SOS button.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">2️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Select Meter Order</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Open the MR list and tap on an assigned meter read order. View account details and meter location.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">3️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Navigate to Meter</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Use built-in GPS turn-by-turn navigation to reach the meter location. Or scan QR/barcode at the meter.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">4️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Capture Reading</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Take a photo — AI reads the kWh value instantly. Add Front, Reading &amp; View photos (3 required).</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-gold" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">5️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Submit &amp; Sync</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Hit Save Reading. Data syncs online instantly or queues offline and auto-uploads when connected.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">6️⃣</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Report &amp; Alert</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Raise exception cases or SOS emergencies with one tap. Team gets notified and response begins.</div></div>
       </div>
     </div>
   </section>
@@ -1010,15 +1041,15 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
       <p class="section-sub" style="max-width:100%">Empower customers to customize how they receive updates with flexible preferences, smart scheduling, and language options—ensuring relevant and timely communication across all channels. 
 Features- Complete communication preference management-giving customers full control over how, when, and where they receive utility communications.</p>
       <div class="icx-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;width:100%;">
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📋</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Communication Types</div><div class="feat-desc" style="font-size:11px;">Users control which communications they receive — billing notifications, payment confirmations, outage alerts, account activity updates, and promotional messages.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">⏰</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Frequency &amp; Timing Controls</div><div class="feat-desc" style="font-size:11px;">Set how often to receive communications — real-time, daily summaries, or monthly updates. Define preferred time windows and time zones.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🌐</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Language &amp; Accessibility</div><div class="feat-desc" style="font-size:11px;">Select preferred language for all communications. Enable accessibility features such as large text or voice-based notifications for all customers.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">✅</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Consent &amp; Compliance Management</div><div class="feat-desc" style="font-size:11px;">Captures and manages customer consent for different channels and types. Maintains consent timestamps and ensures GDPR and CCPA compliance.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🚦</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Priority &amp; Escalation Rules</div><div class="feat-desc" style="font-size:11px;">Define priority rules for message delivery with fallback options. Critical alerts such as service outages can override standard preferences.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔕</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Do Not Disturb (DND)</div><div class="feat-desc" style="font-size:11px;">Set quiet hours during which non-critical communications are paused. Configure exceptions to allow urgent or emergency notifications during DND periods.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📱</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Device &amp; App Preferences</div><div class="feat-desc" style="font-size:11px;">Manage which devices receive push notifications — enable or disable for specific mobile phones or tablets across multiple platforms.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🤖</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Personalization &amp; AI Enhancements</div><div class="feat-desc" style="font-size:11px;">AI recommends the best communication channels and timing based on user behavior. Provides proactive alerts such as predicting high bills.</div></div>
-        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-gold" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📜</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Audit &amp; History</div><div class="feat-desc" style="font-size:11px;">Complete history of all communications sent, along with records of preference and consent changes. Ensures transparency and delivery tracking.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📋</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Communication Types</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Users control which communications they receive — billing notifications, payment confirmations, outage alerts, account activity updates, and promotional messages.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">⏰</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Frequency &amp; Timing Controls</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Set how often to receive communications — real-time, daily summaries, or monthly updates. Define preferred time windows and time zones.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🌐</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Language &amp; Accessibility</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Select preferred language for all communications. Enable accessibility features such as large text or voice-based notifications for all customers.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-red" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">✅</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Consent &amp; Compliance Management</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Captures and manages customer consent for different channels and types. Maintains consent timestamps and ensures GDPR and CCPA compliance.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-blue" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🚦</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Priority &amp; Escalation Rules</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Define priority rules for message delivery with fallback options. Critical alerts such as service outages can override standard preferences.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-cyan" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🔕</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Do Not Disturb (DND)</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Set quiet hours during which non-critical communications are paused. Configure exceptions to allow urgent or emergency notifications during DND periods.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-orange" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📱</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Device &amp; App Preferences</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Manage which devices receive push notifications — enable or disable for specific mobile phones or tablets across multiple platforms.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-green" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">🤖</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Personalization &amp; AI Enhancements</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">AI recommends the best communication channels and timing based on user behavior. Provides proactive alerts such as predicting high bills.</div></div>
+        <div class="feat-card" style="padding:12px;"><div class="feat-icon ic-gold" style="width:38px;height:38px;font-size:17px;margin-bottom:8px;">📜</div><div class="feat-title" style="font-size:13px;margin-bottom:6px;">Audit &amp; History</div><div class="feat-desc" style="font-size:13px;font-weight:400;color:rgba(220,235,255,0.88);">Complete history of all communications sent, along with records of preference and consent changes. Ensures transparency and delivery tracking.</div></div>
       </div>
       <style>
         @media(max-width:900px){.icx-cards-grid{grid-template-columns:repeat(2,1fr)!important;}}
@@ -1194,11 +1225,10 @@ function submitContactForm(){
   if(!email||!email.includes('@')){if(err){err.textContent='Please enter a valid email.';err.style.display='block';}return;}
   if(!message){if(err){err.textContent='Please enter your message.';err.style.display='block';}return;}
   var subjectLine='iBAP Enquiry'+(subject?' – '+subject:'');
-  var body='Name: '+name+'\nEmail: '+email+(phone?'\nPhone: '+phone:'')+(company?'\nCompany: '+company:'')+(subject?'\nSubject: '+subject:'')+'\n\nMessage:\n'+message;
-  window.location.href='mailto:info@ibap.ai?subject='+encodeURIComponent(subjectLine)+'&body='+encodeURIComponent(body);
-  setTimeout(function(){
-    if(suc)suc.style.display='flex';
-  },500);
+  var body='Name: '+name+'%0AEmail: '+email+(phone?'%0APhone: '+phone:'')+(company?'%0ACompany: '+company:'')+(subject?'%0ASubject: '+subject:'')+'%0A%0AMessage:%0A'+encodeURIComponent(message);
+  var mailtoLink='mailto:info@ibap.ai?subject='+encodeURIComponent(subjectLine)+'&body='+body;
+  window.location.href=mailtoLink;
+  if(suc){suc.style.display='block';}
 }
 </script>
 </body>
