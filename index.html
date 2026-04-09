@@ -161,6 +161,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,31,60,.95
 .form-group select option{background:#0d1f3c;color:#fff;}
 .form-group textarea{height:90px;resize:vertical;}
 .form-submit{width:100%;padding:13px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--cyan));border:none;color:#fff;font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:.2s;box-shadow:0 6px 22px rgba(30,144,255,.4);}
+/* MAIL PICKER POPUP */
+.mail-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;}
+.mail-overlay.open{display:flex;}
+.mail-popup{background:linear-gradient(145deg,#0f2a50,#112240);border:1px solid rgba(30,144,255,.35);border-radius:22px;padding:28px 24px 22px;width:100%;max-width:380px;box-shadow:0 32px 80px rgba(0,0,0,.7),0 0 0 1px rgba(30,144,255,.15);animation:popIn .25s cubic-bezier(.34,1.56,.64,1);}
+@keyframes popIn{from{opacity:0;transform:scale(.88);}to{opacity:1;transform:scale(1);}}
+.mail-popup-title{font-family:"Bebas Neue",sans-serif;font-size:22px;color:#fff;margin-bottom:4px;letter-spacing:.04em;}
+.mail-popup-sub{font-size:12px;color:var(--gray);margin-bottom:20px;line-height:1.55;}
+.mail-options{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
+.mail-opt-btn{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:13px;padding:13px 16px;cursor:pointer;transition:.2s;text-decoration:none;color:#fff;font-weight:700;font-size:14px;}
+.mail-opt-btn:hover{background:rgba(30,144,255,.15);border-color:rgba(30,144,255,.5);transform:translateX(3px);}
+.mail-opt-icon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.mail-opt-info{display:flex;flex-direction:column;}
+.mail-opt-name{font-size:14px;font-weight:800;color:#fff;}
+.mail-opt-desc{font-size:11px;color:var(--gray);margin-top:1px;}
+.mail-opt-arrow{margin-left:auto;color:var(--gray);font-size:16px;}
+.mail-cancel{width:100%;padding:10px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);font-size:13px;font-weight:600;cursor:pointer;font-family:"Plus Jakarta Sans",sans-serif;transition:.2s;}
+.mail-cancel:hover{background:rgba(255,255,255,.1);color:#fff;}
 /* SHOWCASE SLIDER */
 .showcase-wrap{overflow:hidden;position:relative;margin-top:22px;}
 .showcase-wrap .fg-l{position:absolute;left:0;top:0;bottom:0;width:60px;background:linear-gradient(90deg,rgba(13,31,60,.95),transparent);z-index:2;pointer-events:none;}
@@ -1190,6 +1207,16 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 </div>
 <!-- END GET IN TOUCH -->
 
+<!-- MAIL PICKER POPUP -->
+<div class="mail-overlay" id="mailPickerOverlay" onclick="closeMailPicker(event)">
+  <div class="mail-popup" id="mailPickerBox">
+    <div class="mail-popup-title">Open With</div>
+    <div class="mail-popup-sub" id="mailPickerSub">Choose your preferred mail app to send this message.</div>
+    <div class="mail-options" id="mailPickerOptions"></div>
+    <button class="mail-cancel" onclick="closeMailPickerDirect()">Cancel</button>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-top-text">
@@ -1198,14 +1225,17 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
   </div>
   <div class="footer-strip">
     <a href="https://www.ibap.ai" target="_blank" rel="noopener">www.ibap.ai</a>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@ibap.ai" target="_blank" rel="noopener">info@ibap.ai</a>
+    <a href="mailto:info@ibap.ai" id="footer-email-link" onclick="handleEmailClick(event,'footer')">info@ibap.ai</a>
     <a href="tel:+14129094665">+1 (412)909-4665</a>
   </div>
 </footer>
 
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ═══════════════════════════════════════════
+// TAB SWITCHING
+// ═══════════════════════════════════════════
 function switchTab(id){
   document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active');});
   document.querySelectorAll('.tab-btn').forEach(function(t){t.classList.remove('active');});
@@ -1217,6 +1247,7 @@ function switchTab(id){
     if(t.getAttribute('data-tab')===id){t.classList.add('active');}
   });
 }
+
 window.addEventListener('DOMContentLoaded',function(){
   var hamBtn=document.getElementById('hamBtn');
   var mobileDrawer=document.getElementById('mobileDrawer');
@@ -1225,13 +1256,14 @@ window.addEventListener('DOMContentLoaded',function(){
       mobileDrawer.classList.toggle('open');
     });
   }
-  // Make sure first tab is active on load
   switchTab('overview');
 });
+
 function closeMobile(){
   var d=document.getElementById('mobileDrawer');
   if(d)d.classList.remove('open');
 }
+
 function resetContactForm(){
   var suc=document.getElementById('cf-success');
   var err=document.getElementById('cf-error');
@@ -1242,16 +1274,145 @@ function resetContactForm(){
     if(el)el.value='';
   });
 }
+
 function showToast(){
   var t=document.getElementById('cf-toast');
   if(!t)return;
   t.classList.add('show');
   setTimeout(function(){t.classList.remove('show');},4000);
 }
-// ═══════════════════════════════════════════════════════════
-// MAILTO APPROACH — No API needed, opens device mail app
-// Works on Android, iOS, iPad, Mac, Windows, Linux
-// ═══════════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════
+// DEVICE DETECTION
+// ═══════════════════════════════════════════
+function isMobileOrTablet(){
+  return /Android|iPhone|iPad|iPod|Windows Phone|IEMobile|Mobile|Tablet/i.test(navigator.userAgent)
+    || (navigator.maxTouchPoints > 1 && /Macintosh/i.test(navigator.userAgent));
+}
+
+// ═══════════════════════════════════════════
+// MAIL PICKER — works for form & footer
+// ═══════════════════════════════════════════
+var _mailPickerLinks = {};
+
+function openMailPicker(links, subtitle){
+  _mailPickerLinks = links;
+  var sub = document.getElementById('mailPickerSub');
+  if(sub) sub.textContent = subtitle || 'Choose your preferred mail app.';
+
+  var opts = document.getElementById('mailPickerOptions');
+  if(!opts) return;
+  opts.innerHTML = '';
+
+  var providers = [
+    {
+      key:'mailto',
+      name:'Default Mail App',
+      desc:'Outlook, Apple Mail, Thunderbird…',
+      icon:'✉️',
+      bg:'linear-gradient(135deg,#2c3e50,#4ca1af)'
+    },
+    {
+      key:'gmail',
+      name:'Gmail',
+      desc:'Open in Gmail web',
+      icon:'<svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M6 40h6V22.5L4 17v20c0 1.654 1.346 3 2 3z"/><path fill="#34A853" d="M36 40h6c.654 0 2-1.346 2-3V17l-8 5.5z"/><path fill="#4A90D9" d="M36 10l-12 8-12-8H6l18 12 18-12z"/><path fill="#FBBC05" d="M4 17l8 5.5V10H6c-1.1 0-2 .9-2 2z"/><path fill="#EA4335" d="M44 12c0-1.1-.9-2-2-2h-6v7.5l8-5.5z"/></svg>',
+      bg:'rgba(234,67,53,.15)',
+      border:'rgba(234,67,53,.4)'
+    },
+    {
+      key:'outlook',
+      name:'Outlook',
+      desc:'Open in Outlook web',
+      icon:'<svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="6" fill="#0078D4"/><rect x="6" y="12" width="22" height="24" rx="2" fill="#fff" opacity=".15"/><text x="17" y="30" font-size="14" font-weight="800" fill="#fff" text-anchor="middle" font-family="Arial">O</text><rect x="26" y="16" width="16" height="2" rx="1" fill="#fff" opacity=".8"/><rect x="26" y="21" width="16" height="2" rx="1" fill="#fff" opacity=".6"/><rect x="26" y="26" width="12" height="2" rx="1" fill="#fff" opacity=".4"/></svg>',
+      bg:'rgba(0,120,212,.15)',
+      border:'rgba(0,120,212,.4)'
+    },
+    {
+      key:'yahoo',
+      name:'Yahoo Mail',
+      desc:'Open in Yahoo Mail',
+      icon:'<svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="8" fill="#6001D2"/><text x="24" y="34" font-size="26" font-weight="900" fill="#fff" text-anchor="middle" font-family="Arial">Y!</text></svg>',
+      bg:'rgba(96,1,210,.15)',
+      border:'rgba(96,1,210,.4)'
+    }
+  ];
+
+  providers.forEach(function(p){
+    if(!links[p.key]) return;
+    var a = document.createElement('a');
+    a.className = 'mail-opt-btn';
+    a.href = links[p.key];
+    if(p.key !== 'mailto') { a.target = '_blank'; a.rel = 'noopener'; }
+    if(p.bg) a.style.background = p.bg;
+    if(p.border) a.style.borderColor = p.border;
+    var iconHtml = (typeof p.icon === 'string' && p.icon.startsWith('<svg'))
+      ? p.icon
+      : '<span style="font-size:20px">'+p.icon+'</span>';
+    a.innerHTML = '<div class="mail-opt-icon" style="background:none">'+iconHtml+'</div>'
+      +'<div class="mail-opt-info">'
+        +'<div class="mail-opt-name">'+p.name+'</div>'
+        +'<div class="mail-opt-desc">'+p.desc+'</div>'
+      +'</div>'
+      +'<span class="mail-opt-arrow">›</span>';
+    a.addEventListener('click', function(){ closeMailPickerDirect(); });
+    opts.appendChild(a);
+  });
+
+  var overlay = document.getElementById('mailPickerOverlay');
+  if(overlay) overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMailPicker(e){
+  if(e && e.target !== document.getElementById('mailPickerOverlay')) return;
+  closeMailPickerDirect();
+}
+function closeMailPickerDirect(){
+  var overlay = document.getElementById('mailPickerOverlay');
+  if(overlay) overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close on Escape key
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeMailPickerDirect();
+});
+
+// ═══════════════════════════════════════════
+// BUILD MAIL LINKS
+// ═══════════════════════════════════════════
+function buildMailLinks(subjectLine, body){
+  var su = encodeURIComponent(subjectLine);
+  var bd = encodeURIComponent(body);
+  return {
+    mailto  : 'mailto:info@ibap.ai?subject=' + su + '&body=' + bd,
+    gmail   : 'https://mail.google.com/mail/?view=cm&fs=1&to=info@ibap.ai&su=' + su + '&body=' + bd,
+    outlook : 'https://outlook.live.com/mail/0/deeplink/compose?to=info@ibap.ai&subject=' + su + '&body=' + encodeURIComponent(body.replace(/\n/g,'<br>')),
+    yahoo   : 'https://compose.mail.yahoo.com/?to=info@ibap.ai&subject=' + su + '&body=' + bd
+  };
+}
+
+// ═══════════════════════════════════════════
+// FOOTER EMAIL CLICK
+// ═══════════════════════════════════════════
+function handleEmailClick(e, source){
+  e.preventDefault();
+  var subjectLine = 'iBAP Enquiry – General Inquiry';
+  var body = 'Hello iBAP Team,\n\nI would like to get in touch regarding your services.\n\nBest regards';
+  var links = buildMailLinks(subjectLine, body);
+
+  if(isMobileOrTablet()){
+    // Mobile: directly open default mail app
+    window.location.href = links.mailto;
+  } else {
+    // Desktop: show picker
+    openMailPicker(links, 'Choose your mail app to contact us at info@ibap.ai');
+  }
+}
+
+// ═══════════════════════════════════════════
+// CONTACT FORM SUBMIT
+// ═══════════════════════════════════════════
 function submitContactForm(){
   var name    = document.getElementById('cf-name').value.trim();
   var email   = document.getElementById('cf-email').value.trim();
@@ -1265,7 +1426,6 @@ function submitContactForm(){
   if(err) err.style.display='none';
   if(suc) suc.style.display='none';
 
-  // Validation
   if(!name){
     if(err){err.textContent='Please enter your name.';err.style.display='block';}
     return;
@@ -1279,37 +1439,41 @@ function submitContactForm(){
     return;
   }
 
-  // Build mailto
-  var subjectLine = encodeURIComponent('iBAP Enquiry' + (subject ? ' – ' + subject : ' – General Inquiry'));
-  var body = encodeURIComponent(
+  var subjectLine = 'iBAP Enquiry' + (subject ? ' – ' + subject : ' – General Inquiry');
+  var body =
     'Name: ' + name + '\n' +
     'Email: ' + email + '\n' +
     'Phone: ' + (phone || 'Not provided') + '\n' +
     'Company: ' + (company || 'Not provided') + '\n' +
     'Subject: ' + (subject || 'General Inquiry') + '\n\n' +
     'Message:\n' + message + '\n\n' +
-    '---\nSent from iBAP website contact form'
-  );
+    '---\nSent from iBAP website contact form';
 
-  var gmailLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=info@ibap.ai&su=' + subjectLine + '&body=' + body;
-  var mailtoLink = 'mailto:info@ibap.ai?subject=' + subjectLine + '&body=' + body;
+  var links = buildMailLinks(subjectLine, body);
 
-  // Show success & reset form immediately
+  // Show success message
   if(suc){
-    suc.innerHTML = '<div style="font-size:22px;margin-bottom:6px">✅</div><div style="font-weight:700;color:var(--green)">Message Ready!</div><div style="font-size:12px;color:var(--gray);margin-top:4px">Your mail app has opened with all details filled. Just hit Send!</div>';
+    if(isMobileOrTablet()){
+      suc.innerHTML =
+        '<div style="font-size:28px;margin-bottom:8px">✅</div>'+
+        '<div style="font-weight:800;font-size:16px;color:var(--green);margin-bottom:6px">Thank you for reaching out!</div>'+
+        '<div style="font-size:13px;color:var(--gray);line-height:1.6;">Your mail app is opening with all details pre-filled.<br>Just tap <strong style="color:#fff">Send</strong> to deliver your message.</div>';
+    } else {
+      suc.innerHTML =
+        '<div style="font-size:22px;margin-bottom:6px">✅</div>'+
+        '<div style="font-weight:700;color:var(--green)">Message Ready!</div>'+
+        '<div style="font-size:12px;color:var(--gray);margin-top:4px">Select your mail app below to send your message.</div>';
+    }
     suc.style.display='block';
   }
   resetContactForm();
 
-  // Mobile detection
-  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-  if(isMobile){
-    // Mobile: open Gmail in new tab
-    window.open(gmailLink, '_blank');
+  if(isMobileOrTablet()){
+    // Mobile/Tablet: open default configured mail app directly
+    window.location.href = links.mailto;
   } else {
-    // Desktop: open Gmail in new tab
-    window.open(gmailLink, '_blank');
+    // Desktop: show mail picker popup (Gmail / Outlook / Yahoo / Default)
+    openMailPicker(links, 'Choose your mail app to send this message to iBAP.');
   }
 }
 </script>
