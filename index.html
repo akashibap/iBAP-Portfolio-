@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>html,body{background:#0d1f3c!important;}</style>
 <title>iBAP – Utility Application Suite</title>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -145,7 +147,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(13,31,60,.95
 .plan-btn.go{background:linear-gradient(135deg,var(--blue),var(--cyan));border-color:transparent;box-shadow:0 5px 20px rgba(30,144,255,.4);}
 .plan-btn.pop{background:linear-gradient(135deg,#e65c00,var(--orange));border-color:transparent;}
 /* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;margin-top:22px;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;margin-top:0;}
 .contact-items{display:flex;flex-direction:column;gap:16px;margin-top:24px;}
 .contact-item{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 20px;transition:.2s;}
 .contact-item:hover{border-color:var(--sky);}
@@ -238,7 +240,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 @media(max-width:600px){
   nav{padding:0 12px;height:60px;}
   .tabs-bar{top:60px;}
-  .tab-content{padding-top:106px;}
+  .tab-content{padding-top:70px;}
   .mobile-drawer{top:60px;}
   .nav-logo-icon{width:34px;height:34px;min-width:34px;}
   .nav-logo-text{font-size:9px;}
@@ -1104,7 +1106,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 <!-- ═══════════════════════════════════════════ -->
 <div class="tab-content" id="tab-contact">
 
-  <section class="section-pad" style="padding-top:32px">
+  <section class="section-pad" style="padding-top:12px">
     <div class="container">
       <div class="contact-grid">
         <div style="background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:22px;padding:34px;display:flex;flex-direction:column;">
@@ -1205,7 +1207,7 @@ footer{background:#1a2d52;border-top:1px solid var(--border);padding:24px 24px 2
 
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function switchTab(id){
   document.querySelectorAll('.tab-content').forEach(function(t){t.classList.remove('active');});
   document.querySelectorAll('.tab-btn').forEach(function(t){t.classList.remove('active');});
@@ -1248,6 +1250,37 @@ function showToast(){
   t.classList.add('show');
   setTimeout(function(){t.classList.remove('show');},4000);
 }
+// ═══════════════════════════════════════════════════════════
+// EmailJS SETUP — ONE-TIME FREE SETUP (3 steps, 5 minutes):
+//
+// STEP 1: Go to https://www.emailjs.com/ → Sign Up (free)
+// STEP 2: Add Email Service:
+//         Dashboard → Email Services → Add Service
+//         Choose Gmail → connect info@ibap.ai Gmail account
+//         Note the SERVICE ID (e.g. service_xxxxxxx)
+// STEP 3: Create Email Template:
+//         Dashboard → Email Templates → Create New Template
+//         Set "To Email" = info@ibap.ai
+//         Template body (copy-paste this):
+//         ----------------------------------------
+//         From: {{from_name}} <{{reply_to}}>
+//         Phone: {{phone}}
+//         Company: {{company}}
+//         Subject: {{subject}}
+//
+//         Message:
+//         {{message}}
+//         ----------------------------------------
+//         Save → Note the TEMPLATE ID (e.g. template_xxxxxxx)
+// STEP 4: Dashboard → Account → Public Key → copy it
+//
+// Then replace the 3 values below:
+// ═══════════════════════════════════════════════════════════
+var EMAILJS_PUBLIC_KEY  = 'FImq5wbDI6T9Wzurs';
+var EMAILJS_SERVICE_ID  = 'service_qncxxt9';
+var EMAILJS_TEMPLATE_ID = 'c0k0fqp';
+// ═══════════════════════════════════════════════════════════
+
 function submitContactForm(){
   var name=document.getElementById('cf-name').value.trim();
   var email=document.getElementById('cf-email').value.trim();
@@ -1264,41 +1297,29 @@ function submitContactForm(){
   if(!email||!email.includes('@')){if(err){err.textContent='Please enter a valid email.';err.style.display='block';}return;}
   if(!message){if(err){err.textContent='Please enter your message.';err.style.display='block';}return;}
   if(btn){btn.disabled=true;btn.textContent='Sending...';}
-  var subjectLine='iBAP Enquiry'+(subject?' – '+subject:'');
-  var fullMessage='Name: '+name+'\nEmail: '+email+(phone?'\nPhone: '+phone:'')+(company?'\nCompany: '+company:'')+(subject?'\nSubject: '+subject:'')+'\n\nMessage:\n'+message;
-  // Web3Forms: delivers real email to inbox on ALL devices & browsers (desktop/mobile/tablet)
-  // ONE-TIME FREE SETUP:
-  //   1. Visit https://web3forms.com/
-  //   2. Enter info@ibap.ai and click "Create Access Key"
-  //   3. Paste the key below replacing YOUR_WEB3FORMS_ACCESS_KEY
-  var ACCESS_KEY='YOUR_WEB3FORMS_ACCESS_KEY';
-  fetch('https://api.web3forms.com/submit',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify({
-      access_key:ACCESS_KEY,
-      name:name,
-      email:email,
-      phone:phone||'',
-      company:company||'',
-      subject:subjectLine,
-      message:fullMessage,
-      from_name:'iBAP Website Enquiry',
-      botcheck:''
-    })
-  })
-  .then(function(r){return r.json();})
-  .then(function(data){
+
+  // Initialize EmailJS with your public key
+  emailjs.init({publicKey: EMAILJS_PUBLIC_KEY});
+
+  var templateParams = {
+    from_name: name,
+    reply_to: email,
+    email: email,
+    phone: phone || 'Not provided',
+    company: company || 'Not provided',
+    subject: subject || 'General Inquiry',
+    message: message,
+    to_email: 'info@ibap.ai'
+  };
+
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+  .then(function(){
     if(btn){btn.disabled=false;btn.textContent='Send Message →';}
-    if(data.success){
-      if(suc)suc.style.display='block';
-      resetContactForm();
-    } else {
-      if(err){err.textContent=data.message||'Something went wrong. Please try again.';err.style.display='block';}
-  }})
-  .catch(function(){
+    if(suc)suc.style.display='block';
+    resetContactForm();
+  }, function(error){
     if(btn){btn.disabled=false;btn.textContent='Send Message →';}
-    if(err){err.textContent='Network error. Please try again.';err.style.display='block';}
+    if(err){err.textContent='Failed to send message. Please try again or email us directly at info@ibap.ai';err.style.display='block';}
   });
 }
 </script>
