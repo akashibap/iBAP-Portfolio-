@@ -1298,8 +1298,7 @@ function submitContactForm(){
   if(!message){if(err){err.textContent='Please enter your message.';err.style.display='block';}return;}
   if(btn){btn.disabled=true;btn.textContent='Sending...';}
 
-  // Initialize EmailJS with your public key
-  emailjs.init({publicKey: EMAILJS_PUBLIC_KEY});
+  emailjs.init(EMAILJS_PUBLIC_KEY);
 
   var templateParams = {
     from_name: name,
@@ -1319,7 +1318,8 @@ function submitContactForm(){
     resetContactForm();
   }, function(error){
     if(btn){btn.disabled=false;btn.textContent='Send Message →';}
-    if(err){err.textContent='Failed to send message. Please try again or email us directly at info@ibap.ai';err.style.display='block';}
+    console.log('EmailJS error:', JSON.stringify(error));
+    if(err){err.textContent='Failed to send message. Error: '+(error.text||error.status||'unknown')+'. Please email us at info@ibap.ai';err.style.display='block';}
   });
 }
 </script>
